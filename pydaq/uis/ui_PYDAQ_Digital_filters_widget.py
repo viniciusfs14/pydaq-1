@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PYDAQ_Digital_filterss_widgetCipFIK.ui'
+## Form generated from reading UI file 'PYDAQ_Digital_filterss_widgeteSXWRr.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -24,7 +24,7 @@ class Ui_Digitalfilters_arduino_widget(object):
     def setupUi(self, Digitalfilters_arduino_widget):
         if not Digitalfilters_arduino_widget.objectName():
             Digitalfilters_arduino_widget.setObjectName(u"Digitalfilters_arduino_widget")
-        Digitalfilters_arduino_widget.resize(866, 567)
+        Digitalfilters_arduino_widget.resize(907, 567)
         Digitalfilters_arduino_widget.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(64, 64, 64);\n"
 "}\n"
@@ -305,28 +305,28 @@ class Ui_Digitalfilters_arduino_widget(object):
 
         self.gridLayout.addWidget(self.select_filter, 2, 0, 1, 1)
 
-        self.arduino_board = QWidget(Digitalfilters_arduino_widget)
-        self.arduino_board.setObjectName(u"arduino_board")
-        self.gridLayout_3 = QGridLayout(self.arduino_board)
+        self.arduino_selection = QWidget(Digitalfilters_arduino_widget)
+        self.arduino_selection.setObjectName(u"arduino_selection")
+        self.gridLayout_3 = QGridLayout(self.arduino_selection)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.comboBox_3 = QComboBox(self.arduino_board)
-        self.comboBox_3.setObjectName(u"comboBox_3")
+        self.arduino_board = QComboBox(self.arduino_selection)
+        self.arduino_board.setObjectName(u"arduino_board")
 
-        self.gridLayout_3.addWidget(self.comboBox_3, 0, 1, 1, 1)
+        self.gridLayout_3.addWidget(self.arduino_board, 0, 1, 1, 1)
 
-        self.label_7 = QLabel(self.arduino_board)
+        self.label_7 = QLabel(self.arduino_selection)
         self.label_7.setObjectName(u"label_7")
 
         self.gridLayout_3.addWidget(self.label_7, 0, 0, 1, 1)
 
-        self.reload_devices = QPushButton(self.arduino_board)
+        self.reload_devices = QPushButton(self.arduino_selection)
         self.reload_devices.setObjectName(u"reload_devices")
         self.reload_devices.setMaximumSize(QSize(25, 16777215))
 
         self.gridLayout_3.addWidget(self.reload_devices, 0, 2, 1, 1)
 
 
-        self.gridLayout.addWidget(self.arduino_board, 0, 0, 1, 1)
+        self.gridLayout.addWidget(self.arduino_selection, 0, 0, 1, 1)
 
         self.iir_configs = QWidget(Digitalfilters_arduino_widget)
         self.iir_configs.setObjectName(u"iir_configs")
@@ -497,7 +497,7 @@ class Ui_Digitalfilters_arduino_widget(object):
         self.filter_combox.setItemText(0, QCoreApplication.translate("Digitalfilters_arduino_widget", u"FIR", None))
         self.filter_combox.setItemText(1, QCoreApplication.translate("Digitalfilters_arduino_widget", u"IIR", None))
 
-        self.label_7.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Select your board:", None))
+        self.label_7.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Select your arduino board:", None))
         self.reload_devices.setText("")
         self.label_9.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Fs:", None))
         self.label_12.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Type:", None))

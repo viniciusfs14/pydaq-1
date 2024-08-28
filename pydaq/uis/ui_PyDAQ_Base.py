@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PyDAQ_BasealhUSP.ui'
+## Form generated from reading UI file 'PyDAQ_BaseCxJvrO.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -601,7 +601,7 @@ class Ui_PydaqGlobal(object):
         self.radioButton.toggled.connect(self.arduino_tabs.show)
 
         self.nidaq_tabs.setCurrentIndex(0)
-        self.arduino_tabs.setCurrentIndex(3)
+        self.arduino_tabs.setCurrentIndex(0)
 
 
         QMetaObject.connectSlotsByName(PydaqGlobal)
