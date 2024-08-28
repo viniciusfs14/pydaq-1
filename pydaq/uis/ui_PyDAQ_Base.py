@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PyDAQ_BaseXMsvXr.ui'
+## Form generated from reading UI file 'PyDAQ_BasealhUSP.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -20,6 +20,7 @@ from PySide6.QtWidgets import (QApplication, QButtonGroup, QGridLayout, QHBoxLay
     QScrollArea, QSizePolicy, QStatusBar, QTabWidget,
     QVBoxLayout, QWidget)
 
+from ..guis.digital_filters_widget import Digital_Filters_Arduino_Widget
 from ..guis.getdata_arduino_widget import GetData_Arduino_Widget
 from ..guis.getdata_nidaq_widget import GetData_NIDAQ_Widget
 from ..guis.senddata_arduino_widget import SendData_Arduino_Widget
@@ -568,7 +569,7 @@ class Ui_PydaqGlobal(object):
         self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 599, 401))
         self.gridLayout_13 = QGridLayout(self.scrollAreaWidgetContents)
         self.gridLayout_13.setObjectName(u"gridLayout_13")
-        self.digital_filters_placeholder = GetData_Arduino_Widget(self.scrollAreaWidgetContents)
+        self.digital_filters_placeholder = Digital_Filters_Arduino_Widget(self.scrollAreaWidgetContents)
         self.digital_filters_placeholder.setObjectName(u"digital_filters_placeholder")
 
         self.gridLayout_13.addWidget(self.digital_filters_placeholder, 0, 0, 1, 1)
