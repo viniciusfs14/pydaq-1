@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>907</width>
-    <height>567</height>
+    <height>581</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -256,6 +256,114 @@ QPushButton#reload_devices:pressed{
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="5" column="0">
+    <widget class="QWidget" name="iir_configs" native="true">
+     <layout class="QGridLayout" name="gridLayout_4">
+      <item row="1" column="0">
+       <widget class="QLabel" name="label_8">
+        <property name="text">
+         <string>Filter order (N):</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="0">
+       <widget class="QLabel" name="label_11">
+        <property name="text">
+         <string>rs:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" alignment="Qt::AlignRight">
+       <widget class="QLineEdit" name="order_iir_line">
+        <property name="text">
+         <string>10</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" alignment="Qt::AlignRight">
+       <widget class="QLineEdit" name="rp_line">
+        <property name="text">
+         <string>1</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QLabel" name="label_9">
+        <property name="text">
+         <string>Fs:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="5" column="1" alignment="Qt::AlignRight">
+       <widget class="QLineEdit" name="rs_line">
+        <property name="text">
+         <string>10</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_12">
+        <property name="text">
+         <string>Type:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" alignment="Qt::AlignRight">
+       <widget class="QLineEdit" name="fs_iir_line">
+        <property name="text">
+         <string>1000</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="0">
+       <widget class="QLabel" name="label_10">
+        <property name="text">
+         <string>rp:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QComboBox" name="comboBox_4">
+        <item>
+         <property name="text">
+          <string>BUTTERWORTH</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>CHEBYSHEV</string>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>CAUER</string>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="3" column="0">
+       <widget class="QLabel" name="label_14">
+        <property name="toolTip">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cutoff Frequency&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="whatsThis">
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Cutoff Frequency&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="text">
+         <string>fc:</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" alignment="Qt::AlignRight">
+       <widget class="QLineEdit" name="fc_line">
+        <property name="text">
+         <string>100</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
    <item row="1" column="0">
     <widget class="Line" name="line_2">
      <property name="orientation">
@@ -263,8 +371,53 @@ QPushButton#reload_devices:pressed{
      </property>
     </widget>
    </item>
-   <item row="3" column="0">
-    <widget class="Line" name="line">
+   <item row="7" column="0">
+    <widget class="QWidget" name="frequency_response" native="true">
+     <layout class="QGridLayout" name="gridLayout_5">
+      <item row="0" column="2" alignment="Qt::AlignRight">
+       <widget class="QCheckBox" name="no_fr">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>No</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="QLabel" name="label_13">
+        <property name="text">
+         <string>Plot frequency response?</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" alignment="Qt::AlignRight">
+       <widget class="QCheckBox" name="yes_fr">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Yes</string>
+        </property>
+        <attribute name="buttonGroup">
+         <string notr="true">buttonGroup</string>
+        </attribute>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="Line" name="line_3">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
@@ -293,102 +446,6 @@ QPushButton#reload_devices:pressed{
          </property>
         </item>
        </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="0" column="0">
-    <widget class="QWidget" name="arduino_selection" native="true">
-     <layout class="QGridLayout" name="gridLayout_3">
-      <item row="0" column="1">
-       <widget class="QComboBox" name="arduino_board"/>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_7">
-        <property name="text">
-         <string>Select your arduino board:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="2">
-       <widget class="QPushButton" name="reload_devices">
-        <property name="maximumSize">
-         <size>
-          <width>25</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="5" column="0">
-    <widget class="QWidget" name="iir_configs" native="true">
-     <layout class="QGridLayout" name="gridLayout_4">
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_9">
-        <property name="text">
-         <string>Fs:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="0">
-       <widget class="QLabel" name="label_12">
-        <property name="text">
-         <string>Type:</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="1" alignment="Qt::AlignRight">
-       <widget class="QLineEdit" name="lineEdit_7"/>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLabel" name="label_8">
-        <property name="text">
-         <string>Filter order (N):</string>
-        </property>
-       </widget>
-      </item>
-      <item row="3" column="0">
-       <widget class="QLabel" name="label_11">
-        <property name="text">
-         <string>High (Hz):</string>
-        </property>
-       </widget>
-      </item>
-      <item row="4" column="1">
-       <widget class="QComboBox" name="comboBox_4">
-        <item>
-         <property name="text">
-          <string>BUTTERWORTH</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>CHEBYSHEV</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_10">
-        <property name="text">
-         <string>Low (Hz):</string>
-        </property>
-       </widget>
-      </item>
-      <item row="1" column="1" alignment="Qt::AlignRight">
-       <widget class="QLineEdit" name="lineEdit_6"/>
-      </item>
-      <item row="0" column="1" alignment="Qt::AlignRight">
-       <widget class="QLineEdit" name="lineEdit_5"/>
-      </item>
-      <item row="3" column="1" alignment="Qt::AlignRight">
-       <widget class="QLineEdit" name="lineEdit_8"/>
       </item>
      </layout>
     </widget>
@@ -470,56 +527,66 @@ QPushButton#reload_devices:pressed{
      </layout>
     </widget>
    </item>
-   <item row="7" column="0">
-    <widget class="QWidget" name="frequency_response" native="true">
-     <layout class="QGridLayout" name="gridLayout_5">
-      <item row="0" column="2" alignment="Qt::AlignRight">
-       <widget class="QCheckBox" name="no_fr">
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>16777215</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>No</string>
-        </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup</string>
-        </attribute>
-       </widget>
+   <item row="0" column="0">
+    <widget class="QWidget" name="arduino_selection" native="true">
+     <layout class="QGridLayout" name="gridLayout_3">
+      <item row="0" column="1">
+       <widget class="QComboBox" name="arduino_board"/>
       </item>
       <item row="0" column="0">
-       <widget class="QLabel" name="label_13">
+       <widget class="QLabel" name="label_7">
         <property name="text">
-         <string>Plot frequency response?</string>
+         <string>Select your arduino board:</string>
         </property>
        </widget>
       </item>
-      <item row="0" column="1" alignment="Qt::AlignRight">
-       <widget class="QCheckBox" name="yes_fr">
+      <item row="0" column="2">
+       <widget class="QPushButton" name="reload_devices">
         <property name="maximumSize">
          <size>
-          <width>100</width>
+          <width>25</width>
           <height>16777215</height>
          </size>
         </property>
         <property name="text">
-         <string>Yes</string>
+         <string/>
         </property>
-        <attribute name="buttonGroup">
-         <string notr="true">buttonGroup</string>
-        </attribute>
        </widget>
       </item>
      </layout>
     </widget>
    </item>
-   <item row="6" column="0">
-    <widget class="Line" name="line_3">
+   <item row="3" column="0">
+    <widget class="Line" name="line">
      <property name="orientation">
       <enum>Qt::Horizontal</enum>
      </property>
+    </widget>
+   </item>
+   <item row="8" column="0">
+    <widget class="QWidget" name="bottom" native="true">
+     <layout class="QGridLayout" name="gridLayout_6">
+      <item row="1" column="0" alignment="Qt::AlignHCenter">
+       <widget class="QPushButton" name="Filter_button">
+        <property name="minimumSize">
+         <size>
+          <width>50</width>
+          <height>0</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>Filter</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="0">
+       <widget class="Line" name="line_4">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </item>
   </layout>

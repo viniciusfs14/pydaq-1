@@ -1,6 +1,9 @@
 from ..uis.ui_PYDAQ_Digital_filters_widget import Ui_Digitalfilters_arduino_widget
 from PySide6.QtWidgets import QFileDialog, QWidget
 import serial
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy.signal import ellip, filtfilt, freqz
 
 class Digital_Filters_Arduino_Widget(QWidget, Ui_Digitalfilters_arduino_widget):
     def __init__(self, *args):
@@ -9,6 +12,7 @@ class Digital_Filters_Arduino_Widget(QWidget, Ui_Digitalfilters_arduino_widget):
         self.filter_combox.currentTextChanged.connect(self.update_filter)
         self.update_filter(self.filter_combox.currentText())
         self.reload_devices.clicked.connect(self.update_com_ports)
+        self.Filter_button.clicked.connect(self.cauer_iir)
         
         # setting starting values
         self.update_com_ports()
@@ -36,3 +40,60 @@ class Digital_Filters_Arduino_Widget(QWidget, Ui_Digitalfilters_arduino_widget):
             pass
         else:
             self.arduino_board.setCurrentIndex(index_current)
+            
+    def cauer_iir(self):
+        self.fs = float(self.fs_iir_line.text())
+        self.cutoff = float(self.fc_line.text())
+        self.order = float(self.order_iir_line.text())
+        self.rp = float(self.rp_line.text())
+        self.rs = float(self.rs_line.text())
+        
+        # Gerar um sinal
+        t = np.arange(0, 1.0, 1/self.fs)  
+        x = 0.5 * np.sin(2 * np.pi * 50 * t) + 0.5 * np.sin(2 * np.pi * 200 * t)  
+
+        # Projeto do filtro elíptico
+        b, a = ellip(self.order, self.rp, self.rs, self.cutoff/(0.5*self.fs), btype='low')
+
+        # Aplicação do filtro
+        y = filtfilt(b, a, x)
+
+        # Plotar os resultados
+        plt.figure(figsize=(12, 10))
+
+        plt.subplot(4, 1, 1)
+        plt.plot(t, x)
+        plt.title('Sinal Original')
+        plt.xlabel('Tempo [s]')
+        plt.ylabel('Amplitude')
+        plt.grid()
+
+        plt.subplot(4, 1, 2)
+        plt.plot(t, y)
+        plt.title('Sinal Filtrado')
+        plt.xlabel('Tempo [s]')
+        plt.ylabel('Amplitude')
+        plt.grid()
+
+        if self.yes_fr.isChecked():
+            # Resposta em frequência do filtro
+            w, h = freqz(b, a, worN=8000)
+
+            plt.subplot(4, 1, 3)
+            plt.plot(0.5*self.fs*w/np.pi, abs(h), 'b')
+            plt.title('Resposta em Frequência do Filtro - Magnitude')
+            plt.xlabel('Frequência [Hz]')
+            plt.ylabel('Magnitude [dB]')
+            plt.grid()
+
+            plt.subplot(4, 1, 4)
+            plt.plot(0.5*self.fs*w/np.pi, np.unwrap(np.angle(h)), 'b')
+            plt.title('Resposta em Frequência do Filtro - Fase')
+            plt.xlabel('Frequência [Hz]')
+            plt.ylabel('Fase [radianos]')
+            plt.grid()
+
+            plt.tight_layout()
+            plt.show()
+        else:
+            pass

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PYDAQ_Digital_filterss_widgeteSXWRr.ui'
+## Form generated from reading UI file 'PYDAQ_Digital_filterss_widgetLbJXdh.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -24,7 +24,7 @@ class Ui_Digitalfilters_arduino_widget(object):
     def setupUi(self, Digitalfilters_arduino_widget):
         if not Digitalfilters_arduino_widget.objectName():
             Digitalfilters_arduino_widget.setObjectName(u"Digitalfilters_arduino_widget")
-        Digitalfilters_arduino_widget.resize(907, 567)
+        Digitalfilters_arduino_widget.resize(907, 581)
         Digitalfilters_arduino_widget.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(64, 64, 64);\n"
 "}\n"
@@ -272,6 +272,76 @@ class Ui_Digitalfilters_arduino_widget(object):
 "")
         self.gridLayout = QGridLayout(Digitalfilters_arduino_widget)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.iir_configs = QWidget(Digitalfilters_arduino_widget)
+        self.iir_configs.setObjectName(u"iir_configs")
+        self.gridLayout_4 = QGridLayout(self.iir_configs)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.label_8 = QLabel(self.iir_configs)
+        self.label_8.setObjectName(u"label_8")
+
+        self.gridLayout_4.addWidget(self.label_8, 1, 0, 1, 1)
+
+        self.label_11 = QLabel(self.iir_configs)
+        self.label_11.setObjectName(u"label_11")
+
+        self.gridLayout_4.addWidget(self.label_11, 5, 0, 1, 1)
+
+        self.order_iir_line = QLineEdit(self.iir_configs)
+        self.order_iir_line.setObjectName(u"order_iir_line")
+
+        self.gridLayout_4.addWidget(self.order_iir_line, 1, 1, 1, 1, Qt.AlignRight)
+
+        self.rp_line = QLineEdit(self.iir_configs)
+        self.rp_line.setObjectName(u"rp_line")
+
+        self.gridLayout_4.addWidget(self.rp_line, 4, 1, 1, 1, Qt.AlignRight)
+
+        self.label_9 = QLabel(self.iir_configs)
+        self.label_9.setObjectName(u"label_9")
+
+        self.gridLayout_4.addWidget(self.label_9, 2, 0, 1, 1)
+
+        self.rs_line = QLineEdit(self.iir_configs)
+        self.rs_line.setObjectName(u"rs_line")
+
+        self.gridLayout_4.addWidget(self.rs_line, 5, 1, 1, 1, Qt.AlignRight)
+
+        self.label_12 = QLabel(self.iir_configs)
+        self.label_12.setObjectName(u"label_12")
+
+        self.gridLayout_4.addWidget(self.label_12, 0, 0, 1, 1)
+
+        self.fs_iir_line = QLineEdit(self.iir_configs)
+        self.fs_iir_line.setObjectName(u"fs_iir_line")
+
+        self.gridLayout_4.addWidget(self.fs_iir_line, 2, 1, 1, 1, Qt.AlignRight)
+
+        self.label_10 = QLabel(self.iir_configs)
+        self.label_10.setObjectName(u"label_10")
+
+        self.gridLayout_4.addWidget(self.label_10, 4, 0, 1, 1)
+
+        self.comboBox_4 = QComboBox(self.iir_configs)
+        self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
+        self.comboBox_4.addItem("")
+        self.comboBox_4.setObjectName(u"comboBox_4")
+
+        self.gridLayout_4.addWidget(self.comboBox_4, 0, 1, 1, 1)
+
+        self.label_14 = QLabel(self.iir_configs)
+        self.label_14.setObjectName(u"label_14")
+
+        self.gridLayout_4.addWidget(self.label_14, 3, 0, 1, 1)
+
+        self.fc_line = QLineEdit(self.iir_configs)
+        self.fc_line.setObjectName(u"fc_line")
+
+        self.gridLayout_4.addWidget(self.fc_line, 3, 1, 1, 1, Qt.AlignRight)
+
+
+        self.gridLayout.addWidget(self.iir_configs, 5, 0, 1, 1)
+
         self.line_2 = QFrame(Digitalfilters_arduino_widget)
         self.line_2.setObjectName(u"line_2")
         self.line_2.setFrameShape(QFrame.HLine)
@@ -279,12 +349,40 @@ class Ui_Digitalfilters_arduino_widget(object):
 
         self.gridLayout.addWidget(self.line_2, 1, 0, 1, 1)
 
-        self.line = QFrame(Digitalfilters_arduino_widget)
-        self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.HLine)
-        self.line.setFrameShadow(QFrame.Sunken)
+        self.frequency_response = QWidget(Digitalfilters_arduino_widget)
+        self.frequency_response.setObjectName(u"frequency_response")
+        self.gridLayout_5 = QGridLayout(self.frequency_response)
+        self.gridLayout_5.setObjectName(u"gridLayout_5")
+        self.no_fr = QCheckBox(self.frequency_response)
+        self.buttonGroup = QButtonGroup(Digitalfilters_arduino_widget)
+        self.buttonGroup.setObjectName(u"buttonGroup")
+        self.buttonGroup.addButton(self.no_fr)
+        self.no_fr.setObjectName(u"no_fr")
+        self.no_fr.setMaximumSize(QSize(100, 16777215))
 
-        self.gridLayout.addWidget(self.line, 3, 0, 1, 1)
+        self.gridLayout_5.addWidget(self.no_fr, 0, 2, 1, 1, Qt.AlignRight)
+
+        self.label_13 = QLabel(self.frequency_response)
+        self.label_13.setObjectName(u"label_13")
+
+        self.gridLayout_5.addWidget(self.label_13, 0, 0, 1, 1)
+
+        self.yes_fr = QCheckBox(self.frequency_response)
+        self.buttonGroup.addButton(self.yes_fr)
+        self.yes_fr.setObjectName(u"yes_fr")
+        self.yes_fr.setMaximumSize(QSize(100, 16777215))
+
+        self.gridLayout_5.addWidget(self.yes_fr, 0, 1, 1, 1, Qt.AlignRight)
+
+
+        self.gridLayout.addWidget(self.frequency_response, 7, 0, 1, 1)
+
+        self.line_3 = QFrame(Digitalfilters_arduino_widget)
+        self.line_3.setObjectName(u"line_3")
+        self.line_3.setFrameShape(QFrame.HLine)
+        self.line_3.setFrameShadow(QFrame.Sunken)
+
+        self.gridLayout.addWidget(self.line_3, 6, 0, 1, 1)
 
         self.select_filter = QWidget(Digitalfilters_arduino_widget)
         self.select_filter.setObjectName(u"select_filter")
@@ -304,88 +402,6 @@ class Ui_Digitalfilters_arduino_widget(object):
 
 
         self.gridLayout.addWidget(self.select_filter, 2, 0, 1, 1)
-
-        self.arduino_selection = QWidget(Digitalfilters_arduino_widget)
-        self.arduino_selection.setObjectName(u"arduino_selection")
-        self.gridLayout_3 = QGridLayout(self.arduino_selection)
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.arduino_board = QComboBox(self.arduino_selection)
-        self.arduino_board.setObjectName(u"arduino_board")
-
-        self.gridLayout_3.addWidget(self.arduino_board, 0, 1, 1, 1)
-
-        self.label_7 = QLabel(self.arduino_selection)
-        self.label_7.setObjectName(u"label_7")
-
-        self.gridLayout_3.addWidget(self.label_7, 0, 0, 1, 1)
-
-        self.reload_devices = QPushButton(self.arduino_selection)
-        self.reload_devices.setObjectName(u"reload_devices")
-        self.reload_devices.setMaximumSize(QSize(25, 16777215))
-
-        self.gridLayout_3.addWidget(self.reload_devices, 0, 2, 1, 1)
-
-
-        self.gridLayout.addWidget(self.arduino_selection, 0, 0, 1, 1)
-
-        self.iir_configs = QWidget(Digitalfilters_arduino_widget)
-        self.iir_configs.setObjectName(u"iir_configs")
-        self.gridLayout_4 = QGridLayout(self.iir_configs)
-        self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.label_9 = QLabel(self.iir_configs)
-        self.label_9.setObjectName(u"label_9")
-
-        self.gridLayout_4.addWidget(self.label_9, 1, 0, 1, 1)
-
-        self.label_12 = QLabel(self.iir_configs)
-        self.label_12.setObjectName(u"label_12")
-
-        self.gridLayout_4.addWidget(self.label_12, 4, 0, 1, 1)
-
-        self.lineEdit_7 = QLineEdit(self.iir_configs)
-        self.lineEdit_7.setObjectName(u"lineEdit_7")
-
-        self.gridLayout_4.addWidget(self.lineEdit_7, 2, 1, 1, 1, Qt.AlignRight)
-
-        self.label_8 = QLabel(self.iir_configs)
-        self.label_8.setObjectName(u"label_8")
-
-        self.gridLayout_4.addWidget(self.label_8, 0, 0, 1, 1)
-
-        self.label_11 = QLabel(self.iir_configs)
-        self.label_11.setObjectName(u"label_11")
-
-        self.gridLayout_4.addWidget(self.label_11, 3, 0, 1, 1)
-
-        self.comboBox_4 = QComboBox(self.iir_configs)
-        self.comboBox_4.addItem("")
-        self.comboBox_4.addItem("")
-        self.comboBox_4.setObjectName(u"comboBox_4")
-
-        self.gridLayout_4.addWidget(self.comboBox_4, 4, 1, 1, 1)
-
-        self.label_10 = QLabel(self.iir_configs)
-        self.label_10.setObjectName(u"label_10")
-
-        self.gridLayout_4.addWidget(self.label_10, 2, 0, 1, 1)
-
-        self.lineEdit_6 = QLineEdit(self.iir_configs)
-        self.lineEdit_6.setObjectName(u"lineEdit_6")
-
-        self.gridLayout_4.addWidget(self.lineEdit_6, 1, 1, 1, 1, Qt.AlignRight)
-
-        self.lineEdit_5 = QLineEdit(self.iir_configs)
-        self.lineEdit_5.setObjectName(u"lineEdit_5")
-
-        self.gridLayout_4.addWidget(self.lineEdit_5, 0, 1, 1, 1, Qt.AlignRight)
-
-        self.lineEdit_8 = QLineEdit(self.iir_configs)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
-
-        self.gridLayout_4.addWidget(self.lineEdit_8, 3, 1, 1, 1, Qt.AlignRight)
-
-
-        self.gridLayout.addWidget(self.iir_configs, 5, 0, 1, 1)
 
         self.fir_configs = QWidget(Digitalfilters_arduino_widget)
         self.fir_configs.setObjectName(u"fir_configs")
@@ -448,40 +464,55 @@ class Ui_Digitalfilters_arduino_widget(object):
 
         self.gridLayout.addWidget(self.fir_configs, 4, 0, 1, 1)
 
-        self.frequency_response = QWidget(Digitalfilters_arduino_widget)
-        self.frequency_response.setObjectName(u"frequency_response")
-        self.gridLayout_5 = QGridLayout(self.frequency_response)
-        self.gridLayout_5.setObjectName(u"gridLayout_5")
-        self.no_fr = QCheckBox(self.frequency_response)
-        self.buttonGroup = QButtonGroup(Digitalfilters_arduino_widget)
-        self.buttonGroup.setObjectName(u"buttonGroup")
-        self.buttonGroup.addButton(self.no_fr)
-        self.no_fr.setObjectName(u"no_fr")
-        self.no_fr.setMaximumSize(QSize(100, 16777215))
+        self.arduino_selection = QWidget(Digitalfilters_arduino_widget)
+        self.arduino_selection.setObjectName(u"arduino_selection")
+        self.gridLayout_3 = QGridLayout(self.arduino_selection)
+        self.gridLayout_3.setObjectName(u"gridLayout_3")
+        self.arduino_board = QComboBox(self.arduino_selection)
+        self.arduino_board.setObjectName(u"arduino_board")
 
-        self.gridLayout_5.addWidget(self.no_fr, 0, 2, 1, 1, Qt.AlignRight)
+        self.gridLayout_3.addWidget(self.arduino_board, 0, 1, 1, 1)
 
-        self.label_13 = QLabel(self.frequency_response)
-        self.label_13.setObjectName(u"label_13")
+        self.label_7 = QLabel(self.arduino_selection)
+        self.label_7.setObjectName(u"label_7")
 
-        self.gridLayout_5.addWidget(self.label_13, 0, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.label_7, 0, 0, 1, 1)
 
-        self.yes_fr = QCheckBox(self.frequency_response)
-        self.buttonGroup.addButton(self.yes_fr)
-        self.yes_fr.setObjectName(u"yes_fr")
-        self.yes_fr.setMaximumSize(QSize(100, 16777215))
+        self.reload_devices = QPushButton(self.arduino_selection)
+        self.reload_devices.setObjectName(u"reload_devices")
+        self.reload_devices.setMaximumSize(QSize(25, 16777215))
 
-        self.gridLayout_5.addWidget(self.yes_fr, 0, 1, 1, 1, Qt.AlignRight)
+        self.gridLayout_3.addWidget(self.reload_devices, 0, 2, 1, 1)
 
 
-        self.gridLayout.addWidget(self.frequency_response, 7, 0, 1, 1)
+        self.gridLayout.addWidget(self.arduino_selection, 0, 0, 1, 1)
 
-        self.line_3 = QFrame(Digitalfilters_arduino_widget)
-        self.line_3.setObjectName(u"line_3")
-        self.line_3.setFrameShape(QFrame.HLine)
-        self.line_3.setFrameShadow(QFrame.Sunken)
+        self.line = QFrame(Digitalfilters_arduino_widget)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
 
-        self.gridLayout.addWidget(self.line_3, 6, 0, 1, 1)
+        self.gridLayout.addWidget(self.line, 3, 0, 1, 1)
+
+        self.bottom = QWidget(Digitalfilters_arduino_widget)
+        self.bottom.setObjectName(u"bottom")
+        self.gridLayout_6 = QGridLayout(self.bottom)
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.Filter_button = QPushButton(self.bottom)
+        self.Filter_button.setObjectName(u"Filter_button")
+        self.Filter_button.setMinimumSize(QSize(50, 0))
+
+        self.gridLayout_6.addWidget(self.Filter_button, 1, 0, 1, 1, Qt.AlignHCenter)
+
+        self.line_4 = QFrame(self.bottom)
+        self.line_4.setObjectName(u"line_4")
+        self.line_4.setFrameShape(QFrame.HLine)
+        self.line_4.setFrameShadow(QFrame.Sunken)
+
+        self.gridLayout_6.addWidget(self.line_4, 0, 0, 1, 1)
+
+
+        self.gridLayout.addWidget(self.bottom, 8, 0, 1, 1)
 
 
         self.retranslateUi(Digitalfilters_arduino_widget)
@@ -493,20 +524,34 @@ class Ui_Digitalfilters_arduino_widget(object):
 
     def retranslateUi(self, Digitalfilters_arduino_widget):
         Digitalfilters_arduino_widget.setWindowTitle(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Form", None))
+        self.label_8.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Filter order (N):", None))
+        self.label_11.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"rs:", None))
+        self.order_iir_line.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"10", None))
+        self.rp_line.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"1", None))
+        self.label_9.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Fs:", None))
+        self.rs_line.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"10", None))
+        self.label_12.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Type:", None))
+        self.fs_iir_line.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"1000", None))
+        self.label_10.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"rp:", None))
+        self.comboBox_4.setItemText(0, QCoreApplication.translate("Digitalfilters_arduino_widget", u"BUTTERWORTH", None))
+        self.comboBox_4.setItemText(1, QCoreApplication.translate("Digitalfilters_arduino_widget", u"CHEBYSHEV", None))
+        self.comboBox_4.setItemText(2, QCoreApplication.translate("Digitalfilters_arduino_widget", u"CAUER", None))
+
+#if QT_CONFIG(tooltip)
+        self.label_14.setToolTip(QCoreApplication.translate("Digitalfilters_arduino_widget", u"<html><head/><body><p>Cutoff Frequency</p><p><br/></p></body></html>", None))
+#endif // QT_CONFIG(tooltip)
+#if QT_CONFIG(whatsthis)
+        self.label_14.setWhatsThis(QCoreApplication.translate("Digitalfilters_arduino_widget", u"<html><head/><body><p>Cutoff Frequency</p></body></html>", None))
+#endif // QT_CONFIG(whatsthis)
+        self.label_14.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"fc:", None))
+        self.fc_line.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"100", None))
+        self.no_fr.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"No", None))
+        self.label_13.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Plot frequency response?", None))
+        self.yes_fr.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Yes", None))
         self.label.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Select your filter:", None))
         self.filter_combox.setItemText(0, QCoreApplication.translate("Digitalfilters_arduino_widget", u"FIR", None))
         self.filter_combox.setItemText(1, QCoreApplication.translate("Digitalfilters_arduino_widget", u"IIR", None))
 
-        self.label_7.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Select your arduino board:", None))
-        self.reload_devices.setText("")
-        self.label_9.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Fs:", None))
-        self.label_12.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Type:", None))
-        self.label_8.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Filter order (N):", None))
-        self.label_11.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"High (Hz):", None))
-        self.comboBox_4.setItemText(0, QCoreApplication.translate("Digitalfilters_arduino_widget", u"BUTTERWORTH", None))
-        self.comboBox_4.setItemText(1, QCoreApplication.translate("Digitalfilters_arduino_widget", u"CHEBYSHEV", None))
-
-        self.label_10.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Low (Hz):", None))
         self.label_4.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Low (Hz):", None))
         self.label_5.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"High (Hz):", None))
         self.label_2.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Enter filter numtaps:", None))
@@ -517,8 +562,8 @@ class Ui_Digitalfilters_arduino_widget(object):
         self.comboBox_2.setItemText(2, QCoreApplication.translate("Digitalfilters_arduino_widget", u"BANDPASS", None))
         self.comboBox_2.setItemText(3, QCoreApplication.translate("Digitalfilters_arduino_widget", u"LOWPASS", None))
 
-        self.no_fr.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"No", None))
-        self.label_13.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Plot frequency response?", None))
-        self.yes_fr.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Yes", None))
+        self.label_7.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Select your arduino board:", None))
+        self.reload_devices.setText("")
+        self.Filter_button.setText(QCoreApplication.translate("Digitalfilters_arduino_widget", u"Filter", None))
     # retranslateUi
 
