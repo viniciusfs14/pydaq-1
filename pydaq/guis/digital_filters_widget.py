@@ -48,17 +48,17 @@ class Digital_Filters_Arduino_Widget(QWidget, Ui_Digitalfilters_arduino_widget):
         self.rp = float(self.rp_line.text())
         self.rs = float(self.rs_line.text())
         
-        # Gerar um sinal
+        # Generate a signal
         t = np.arange(0, 1.0, 1/self.fs)  
         x = 0.5 * np.sin(2 * np.pi * 50 * t) + 0.5 * np.sin(2 * np.pi * 200 * t)  
 
-        # Projeto do filtro elíptico
+        # Euler Project
         b, a = ellip(self.order, self.rp, self.rs, self.cutoff/(0.5*self.fs), btype='low')
 
-        # Aplicação do filtro
+        
         y = filtfilt(b, a, x)
 
-        # Plotar os resultados
+        
         plt.figure(figsize=(12, 10))
 
         plt.subplot(4, 1, 1)
@@ -76,7 +76,7 @@ class Digital_Filters_Arduino_Widget(QWidget, Ui_Digitalfilters_arduino_widget):
         plt.grid()
 
         if self.yes_fr.isChecked():
-            # Resposta em frequência do filtro
+            
             w, h = freqz(b, a, worN=8000)
 
             plt.subplot(4, 1, 3)

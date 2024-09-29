@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PyDAQ_BaseCxJvrO.ui'
+## Form generated from reading UI file 'PyDAQ_BaseMKcSGc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -482,6 +482,28 @@ class Ui_PydaqGlobal(object):
         self.gridLayout_6.addWidget(self.scrollArea, 0, 0, 1, 1)
 
         self.nidaq_tabs.addTab(self.step_response_nidaq_tab, "")
+        self.DigitalFilters_NIDAQ = QWidget()
+        self.DigitalFilters_NIDAQ.setObjectName(u"DigitalFilters_NIDAQ")
+        self.gridLayout_16 = QGridLayout(self.DigitalFilters_NIDAQ)
+        self.gridLayout_16.setObjectName(u"gridLayout_16")
+        self.scrollArea_8 = QScrollArea(self.DigitalFilters_NIDAQ)
+        self.scrollArea_8.setObjectName(u"scrollArea_8")
+        self.scrollArea_8.setWidgetResizable(True)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 599, 401))
+        self.gridLayout_17 = QGridLayout(self.scrollAreaWidgetContents_2)
+        self.gridLayout_17.setObjectName(u"gridLayout_17")
+        self.digital_filters_placeholder_2 = Digital_Filters_Arduino_Widget(self.scrollAreaWidgetContents_2)
+        self.digital_filters_placeholder_2.setObjectName(u"digital_filters_placeholder_2")
+
+        self.gridLayout_17.addWidget(self.digital_filters_placeholder_2, 0, 0, 1, 1)
+
+        self.scrollArea_8.setWidget(self.scrollAreaWidgetContents_2)
+
+        self.gridLayout_16.addWidget(self.scrollArea_8, 0, 0, 1, 1)
+
+        self.nidaq_tabs.addTab(self.DigitalFilters_NIDAQ, "")
 
         self.gridLayout.addWidget(self.nidaq_tabs, 0, 1, 1, 1)
 
@@ -600,8 +622,8 @@ class Ui_PydaqGlobal(object):
         self.radioButton_2.toggled.connect(self.arduino_tabs.hide)
         self.radioButton.toggled.connect(self.arduino_tabs.show)
 
-        self.nidaq_tabs.setCurrentIndex(0)
-        self.arduino_tabs.setCurrentIndex(0)
+        self.nidaq_tabs.setCurrentIndex(3)
+        self.arduino_tabs.setCurrentIndex(3)
 
 
         QMetaObject.connectSlotsByName(PydaqGlobal)
@@ -618,6 +640,7 @@ class Ui_PydaqGlobal(object):
         self.nidaq_tabs.setTabText(self.nidaq_tabs.indexOf(self.get_data_nidaq), QCoreApplication.translate("PydaqGlobal", u"Get Data", None))
         self.nidaq_tabs.setTabText(self.nidaq_tabs.indexOf(self.send_data_nidaq_tab), QCoreApplication.translate("PydaqGlobal", u"Send Data", None))
         self.nidaq_tabs.setTabText(self.nidaq_tabs.indexOf(self.step_response_nidaq_tab), QCoreApplication.translate("PydaqGlobal", u"Step Response", None))
+        self.nidaq_tabs.setTabText(self.nidaq_tabs.indexOf(self.DigitalFilters_NIDAQ), QCoreApplication.translate("PydaqGlobal", u"Digital Filters", None))
         self.arduino_tabs.setTabText(self.arduino_tabs.indexOf(self.get_data_arduino_tab), QCoreApplication.translate("PydaqGlobal", u"Get Data", None))
         self.arduino_tabs.setTabText(self.arduino_tabs.indexOf(self.send_data_arduino_tab), QCoreApplication.translate("PydaqGlobal", u"Send Data", None))
         self.arduino_tabs.setTabText(self.arduino_tabs.indexOf(self.step_response_arduino_tab), QCoreApplication.translate("PydaqGlobal", u"Step Response", None))
