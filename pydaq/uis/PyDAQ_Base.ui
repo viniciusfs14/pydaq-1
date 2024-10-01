@@ -560,7 +560,7 @@ QScrollArea{
               </property>
               <layout class="QGridLayout" name="gridLayout_17">
                <item row="0" column="0">
-                <widget class="Digital_Filters_Arduino_Widget" name="digital_filters_placeholder_2" native="true"/>
+                <widget class="Digital_Filters_NIDAQ_Widget" name="digital_filters_placeholder_2" native="true"/>
                </item>
               </layout>
              </widget>
@@ -766,6 +766,12 @@ QScrollArea{
    <class>Digital_Filters_Arduino_Widget</class>
    <extends>QWidget</extends>
    <header>..guis.digital_filters_widget</header>
+   <container>1</container>
+  </customwidget>
+  <customwidget>
+   <class>Digital_Filters_NIDAQ_Widget</class>
+   <extends>QWidget</extends>
+   <header location="global">..guis.digital_filters_nidaq_widget</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PyDAQ_BaseMKcSGc.ui'
+## Form generated from reading UI file 'PyDAQ_BaseCAGvVJ.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -20,6 +20,7 @@ from PySide6.QtWidgets import (QApplication, QButtonGroup, QGridLayout, QHBoxLay
     QScrollArea, QSizePolicy, QStatusBar, QTabWidget,
     QVBoxLayout, QWidget)
 
+from ..guis.digital_filters_nidaq_widget import Digital_Filters_NIDAQ_Widget
 from ..guis.digital_filters_widget import Digital_Filters_Arduino_Widget
 from ..guis.getdata_arduino_widget import GetData_Arduino_Widget
 from ..guis.getdata_nidaq_widget import GetData_NIDAQ_Widget
@@ -494,7 +495,7 @@ class Ui_PydaqGlobal(object):
         self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 599, 401))
         self.gridLayout_17 = QGridLayout(self.scrollAreaWidgetContents_2)
         self.gridLayout_17.setObjectName(u"gridLayout_17")
-        self.digital_filters_placeholder_2 = Digital_Filters_Arduino_Widget(self.scrollAreaWidgetContents_2)
+        self.digital_filters_placeholder_2 = Digital_Filters_NIDAQ_Widget(self.scrollAreaWidgetContents_2)
         self.digital_filters_placeholder_2.setObjectName(u"digital_filters_placeholder_2")
 
         self.gridLayout_17.addWidget(self.digital_filters_placeholder_2, 0, 0, 1, 1)
