@@ -419,7 +419,7 @@ QPushButton#reload_devices:pressed{
           </widget>
          </item>
          <item row="0" column="0">
-          <widget class="QComboBox" name="comboBox">
+          <widget class="QComboBox" name="device_combo">
            <property name="minimumSize">
             <size>
              <width>0</width>

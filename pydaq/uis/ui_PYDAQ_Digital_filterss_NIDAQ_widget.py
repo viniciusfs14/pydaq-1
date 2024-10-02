@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PYDAQ_Digital_filterss_NIDAQ_widgetDzjkHI.ui'
+## Form generated from reading UI file 'PYDAQ_Digital_filterss_NIDAQ_widgetKKjyrN.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -353,12 +353,12 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
 
         self.gridLayout_3.addWidget(self.reload_devices, 0, 1, 1, 1)
 
-        self.comboBox = QComboBox(self.widget)
-        self.comboBox.setObjectName(u"comboBox")
-        self.comboBox.setMinimumSize(QSize(0, 22))
-        self.comboBox.setMaximumSize(QSize(16777215, 22))
+        self.device_combo = QComboBox(self.widget)
+        self.device_combo.setObjectName(u"device_combo")
+        self.device_combo.setMinimumSize(QSize(0, 22))
+        self.device_combo.setMaximumSize(QSize(16777215, 22))
 
-        self.gridLayout_3.addWidget(self.comboBox, 0, 0, 1, 1)
+        self.gridLayout_3.addWidget(self.device_combo, 0, 0, 1, 1)
 
 
         self.gridLayout_2.addWidget(self.widget, 0, 2, 1, 1)
