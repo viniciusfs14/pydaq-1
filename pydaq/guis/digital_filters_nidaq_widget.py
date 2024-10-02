@@ -3,8 +3,6 @@ from ..uis.ui_PYDAQ_FIR_widget import Ui_FIR_window
 from ..uis.ui_PYDAQ_IIR_widget import Ui_IIR_window
 from PySide6.QtWidgets import QFileDialog, QWidget
 import nidaqmx
-import numpy as np
-
 
 class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
     def __init__(self, *args):
