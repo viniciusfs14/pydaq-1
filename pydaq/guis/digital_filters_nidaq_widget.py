@@ -1,5 +1,7 @@
 import nidaqmx
 import os
+import matplotlib.pyplot as plt
+import numpy as np
 
 from ..uis.ui_PYDAQ_Digital_filterss_NIDAQ_widget import Ui_Digitalfilters_NIDAQ_widget
 from ..uis.ui_PYDAQ_FIR_widget import Ui_FIR_window
@@ -15,7 +17,6 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
         super(Digital_Filters_NIDAQ_Widget, self).__init__()
         self.setupUi(self)
         self._nidaq_info()
-        
         
         try:
             chan = nidaqmx.system.device.Device(
@@ -49,6 +50,7 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
         self.filter_button.clicked.connect(self.start_func_get_data)
         self.browse_button.clicked.connect(self.locate_path)
         self.device_combo.currentIndexChanged.connect(self.update_channels)
+        self.fr_button.clicked.connect(self.frequency_response)
         self.signals = GuiSignals()
         
         
@@ -151,6 +153,21 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
             self.signals.returned.emit(g)
             
    
+    def frequency_response(self):
+        # open the data.dat and time.dat and make the fft
+        self.time_way = self.path_line.text() + '\\' + 'time.dat'
+        self.data_way = self.path_line.text() + '\\' + 'data.dat'
+        
+        # load the archive
+        self.time = np.loadtxt(self.time_way)
+        self.data = np.loadtxt(self.data_way)
+        
+        plt.plot(self.time, self.data)
+        plt.grid()
+        plt.show()
+        
+        
+        
         
 class FirWindow(QWidget, Ui_FIR_window): # Call the FirWindow widget
     def __init__(self):

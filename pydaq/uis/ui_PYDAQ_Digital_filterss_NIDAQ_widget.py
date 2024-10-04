@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PYDAQ_Digital_filterss_NIDAQ_widgetCQolYP.ui'
+## Form generated from reading UI file 'PYDAQ_Digital_filterss_NIDAQ_widgetglznkG.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -20,12 +20,11 @@ from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QButtonGroup, QCo
     QLabel, QLineEdit, QPushButton, QRadioButton,
     QSizePolicy, QWidget)
 
-
 class Ui_Digitalfilters_NIDAQ_widget(object):
     def setupUi(self, Digitalfilters_NIDAQ_widget):
         if not Digitalfilters_NIDAQ_widget.objectName():
             Digitalfilters_NIDAQ_widget.setObjectName(u"Digitalfilters_NIDAQ_widget")
-        Digitalfilters_NIDAQ_widget.resize(922, 547)
+        Digitalfilters_NIDAQ_widget.resize(922, 549)
         Digitalfilters_NIDAQ_widget.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(64, 64, 64);\n"
 "}\n"
@@ -284,6 +283,13 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
 
         self.gridLayout_7.addWidget(self.filter_button, 0, 0, 1, 1)
 
+        self.fr_button = QPushButton(self.widget_6)
+        self.fr_button.setObjectName(u"fr_button")
+        self.fr_button.setMinimumSize(QSize(0, 30))
+        self.fr_button.setMaximumSize(QSize(100, 30))
+
+        self.gridLayout_7.addWidget(self.fr_button, 0, 1, 1, 1)
+
 
         self.gridLayout.addWidget(self.widget_6, 5, 0, 1, 1)
 
@@ -495,6 +501,13 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
 
         self.gridLayout_2.addWidget(self.line_7, 0, 1, 14, 1)
 
+        self.label_6 = QLabel(self.left_side)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setMinimumSize(QSize(0, 30))
+        self.label_6.setMaximumSize(QSize(16777215, 30))
+
+        self.gridLayout_2.addWidget(self.label_6, 6, 0, 1, 1)
+
         self.label_9 = QLabel(self.left_side)
         self.label_9.setObjectName(u"label_9")
         self.label_9.setMinimumSize(QSize(0, 30))
@@ -553,13 +566,6 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
 
         self.gridLayout_2.addWidget(self.widget_4, 3, 2, 1, 1)
 
-        self.label_6 = QLabel(self.left_side)
-        self.label_6.setObjectName(u"label_6")
-        self.label_6.setMinimumSize(QSize(0, 30))
-        self.label_6.setMaximumSize(QSize(16777215, 30))
-
-        self.gridLayout_2.addWidget(self.label_6, 6, 0, 1, 1)
-
 
         self.gridLayout.addWidget(self.left_side, 3, 0, 1, 1)
 
@@ -572,6 +578,7 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
     def retranslateUi(self, Digitalfilters_NIDAQ_widget):
         Digitalfilters_NIDAQ_widget.setWindowTitle(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Form", None))
         self.filter_button.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"FILTER", None))
+        self.fr_button.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"FR", None))
         self.label_4.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Select your filter:", None))
         self.reload_devices.setText("")
         self.yes_plot.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Yes", None))
@@ -583,6 +590,7 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
         self.browse_button.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Browse", None))
         self.yes_save.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Yes", None))
         self.no_save.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"No", None))
+        self.label_6.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Sample Period (s)", None))
         self.label_9.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Save data?", None))
         self.label_8.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Plot data?", None))
         self.label_5.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Plot frequency response?", None))
@@ -592,6 +600,5 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
         self.type_filter.setItemText(0, QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"FIR", None))
         self.type_filter.setItemText(1, QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"IIR", None))
 
-        self.label_6.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Sample Period (s)", None))
     # retranslateUi
 
