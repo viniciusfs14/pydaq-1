@@ -1,19 +1,21 @@
+import nidaqmx
+import os
+
 from ..uis.ui_PYDAQ_Digital_filterss_NIDAQ_widget import Ui_Digitalfilters_NIDAQ_widget
 from ..uis.ui_PYDAQ_FIR_widget import Ui_FIR_window
 from ..uis.ui_PYDAQ_IIR_widget import Ui_IIR_window
+
 from PySide6.QtWidgets import QFileDialog, QWidget
-import nidaqmx
+from ..get_data import GetData
+from .error_window_gui import Error_window
+from pydaq.utils.signals import GuiSignals
 
 class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
     def __init__(self, *args):
         super(Digital_Filters_NIDAQ_Widget, self).__init__()
         self.setupUi(self)
-        
-        self.type_filter.currentTextChanged.connect(self.check_filter)
-        self.fir_window = None
-        self.iir_window = None
-        # Gathering nidaq info
         self._nidaq_info()
+        
         
         try:
             chan = nidaqmx.system.device.Device(
@@ -25,15 +27,34 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
             chan = ""
             defchan = ""
             
+        self.type_filter.currentTextChanged.connect(self.check_filter)
+        self.fir_window = None
+        self.iir_window = None
+        # Gathering nidaq info
         
         self.device_combo.addItems(self.device_type)
         self.channel_combo.addItems(chan)
         self.terminal_combo.addItems(["Diff", "RSE", "NRSE"])
         
+        defchan_index = self.channel_combo.findText(defchan)
+
+        if defchan_index == -1:
+            pass
+        else:
+            self.channel_combo.setCurrentIndex(defchan_index)
+            
+        self.path_line.setText(
+            os.path.join(os.path.join(os.path.expanduser("~")), "Desktop")
+        )
+        self.filter_button.clicked.connect(self.start_func_get_data)
+        self.browse_button.clicked.connect(self.locate_path)
+        self.device_combo.currentIndexChanged.connect(self.update_channels)
+        self.signals = GuiSignals()
+        
         
     def _nidaq_info(self):
         """Gathering NIDAQ info"""
-
+        
         # Getting all available devices
         self.device_names = []
         self.device_categories = []
@@ -44,6 +65,15 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
             self.device_names.append(device.name)
             self.device_categories.append(device.product_category)
             self.device_type.append(device.product_type)
+            
+    def locate_path(self):  # Calling the Folder Browser Widget
+        output_folder_path = QFileDialog.getExistingDirectory(
+            self, caption="Choose a folder to save the data file"
+        )
+        if output_folder_path == "":
+            pass
+        else:
+            self.path_line.setText(output_folder_path.replace("/", "\\"))
 
     def update_channels(self):
         # Changing availables channels if device changes
@@ -66,20 +96,7 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
             pass
         else:
             self.channel_combo.setCurrentIndex(defchan_index)
-
-    def reload_devices_handler(self):
-        """Updates the devices combo box"""
-        self._nidaq_info()
-
-        # If the signal is not disconnect, it will run into a warning
-        self.device_combo.currentIndexChanged.disconnect(self.update_channels)
-
-        # Updating items on combo box
-        self.device_combo.clear()
-        self.device_combo.addItems(self.device_type)
-
-        # Reconnecting the signal
-        self.device_combo.currentIndexChanged.connect(self.update_channels)        
+       
                 
     def check_filter(self, text):
         if text == 'FIR':
@@ -88,21 +105,60 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
             self.ShowIrrWindow()
     
     def ShowFirWindow(self):
+        # Open FIR window
         if self.fir_window is None:
             self.fir_window = FirWindow()
         self.fir_window.show()
         
     def ShowIrrWindow(self):
+        # Open IIR window
         if self.iir_window is None:
             self.iir_window = IrrWindow()
         self.iir_window.show()
-class FirWindow(QWidget, Ui_FIR_window):
+        
+    def start_func_get_data(self):  # Start getting data
+        try:
+            # Instantiating the GetData class
+            g = GetData()
+
+            # Separating variables
+            g.device = self.channel_combo.currentText().split("/")[0]
+            g.channel = self.channel_combo.currentText().split("/")[1]
+            g.terminal = g.term_map[self.terminal_combo.currentText()]
+            g.ts = self.sample_line.value()
+            g.session_duration = self.session_line.value()
+            g.plot = True if self.ratio_plot.checkedId() == -2 else False
+            g.save = True if self.ratio_save.checkedId() == -2 else False
+            g.path = self.path_line.text()
+
+            # Checking if a path was set
+            if self.path_line.text() == "":
+                raise BaseException
+
+            # Restarting variables
+            g.data = []
+            g.time_var = []
+            g.error_path = False
+
+        except BaseException:
+            error_w = Error_window()
+            error_w.exec()
+            g.error_path = True
+
+        if not g.error_path:
+            # Calling data aquisition method
+            g.get_data_nidaq()
+            self.signals.returned.emit(g)
+            
+   
+        
+class FirWindow(QWidget, Ui_FIR_window): # Call the FirWindow widget
     def __init__(self):
         super(FirWindow, self).__init__()
         self.setupUi(self)
         self.close_fir_button.clicked.connect(self.close)
         
-class IrrWindow(QWidget, Ui_IIR_window):
+class IrrWindow(QWidget, Ui_IIR_window): # Call the Iir window widget
     def __init__(self):
         super(IrrWindow, self).__init__()
         self.setupUi(self)

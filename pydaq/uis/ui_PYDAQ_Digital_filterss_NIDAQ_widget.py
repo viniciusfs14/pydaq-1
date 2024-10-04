@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PYDAQ_Digital_filterss_NIDAQ_widgetKKjyrN.ui'
+## Form generated from reading UI file 'PYDAQ_Digital_filterss_NIDAQ_widgetCQolYP.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -15,16 +15,17 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QButtonGroup, QComboBox, QFrame,
-    QGridLayout, QHBoxLayout, QLabel, QPushButton,
-    QRadioButton, QSizePolicy, QWidget)
+from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QButtonGroup, QComboBox,
+    QDoubleSpinBox, QFrame, QGridLayout, QHBoxLayout,
+    QLabel, QLineEdit, QPushButton, QRadioButton,
+    QSizePolicy, QWidget)
 
 
 class Ui_Digitalfilters_NIDAQ_widget(object):
     def setupUi(self, Digitalfilters_NIDAQ_widget):
         if not Digitalfilters_NIDAQ_widget.objectName():
             Digitalfilters_NIDAQ_widget.setObjectName(u"Digitalfilters_NIDAQ_widget")
-        Digitalfilters_NIDAQ_widget.resize(899, 338)
+        Digitalfilters_NIDAQ_widget.resize(922, 547)
         Digitalfilters_NIDAQ_widget.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(64, 64, 64);\n"
 "}\n"
@@ -272,75 +273,69 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
 "")
         self.gridLayout = QGridLayout(Digitalfilters_NIDAQ_widget)
         self.gridLayout.setObjectName(u"gridLayout")
+        self.widget_6 = QWidget(Digitalfilters_NIDAQ_widget)
+        self.widget_6.setObjectName(u"widget_6")
+        self.gridLayout_7 = QGridLayout(self.widget_6)
+        self.gridLayout_7.setObjectName(u"gridLayout_7")
+        self.filter_button = QPushButton(self.widget_6)
+        self.filter_button.setObjectName(u"filter_button")
+        self.filter_button.setMinimumSize(QSize(0, 30))
+        self.filter_button.setMaximumSize(QSize(100, 30))
+
+        self.gridLayout_7.addWidget(self.filter_button, 0, 0, 1, 1)
+
+
+        self.gridLayout.addWidget(self.widget_6, 5, 0, 1, 1)
+
+        self.line = QFrame(Digitalfilters_NIDAQ_widget)
+        self.line.setObjectName(u"line")
+        self.line.setFrameShape(QFrame.HLine)
+        self.line.setFrameShadow(QFrame.Sunken)
+
+        self.gridLayout.addWidget(self.line, 4, 0, 1, 1)
+
         self.left_side = QWidget(Digitalfilters_NIDAQ_widget)
         self.left_side.setObjectName(u"left_side")
         self.gridLayout_2 = QGridLayout(self.left_side)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
-        self.widget_5 = QWidget(self.left_side)
-        self.widget_5.setObjectName(u"widget_5")
-        self.horizontalLayout = QHBoxLayout(self.widget_5)
-        self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.yes_fr = QRadioButton(self.widget_5)
-        self.ratio_fr = QButtonGroup(Digitalfilters_NIDAQ_widget)
-        self.ratio_fr.setObjectName(u"ratio_fr")
-        self.ratio_fr.addButton(self.yes_fr)
-        self.yes_fr.setObjectName(u"yes_fr")
-        self.yes_fr.setChecked(True)
+        self.label_4 = QLabel(self.left_side)
+        self.label_4.setObjectName(u"label_4")
+        self.label_4.setMinimumSize(QSize(0, 30))
+        self.label_4.setMaximumSize(QSize(16777215, 30))
 
-        self.horizontalLayout.addWidget(self.yes_fr)
+        self.gridLayout_2.addWidget(self.label_4, 3, 0, 1, 1)
 
-        self.no_fr = QRadioButton(self.widget_5)
-        self.ratio_fr.addButton(self.no_fr)
-        self.no_fr.setObjectName(u"no_fr")
+        self.widget_2 = QWidget(self.left_side)
+        self.widget_2.setObjectName(u"widget_2")
+        self.gridLayout_4 = QGridLayout(self.widget_2)
+        self.gridLayout_4.setObjectName(u"gridLayout_4")
+        self.channel_combo = QComboBox(self.widget_2)
+        self.channel_combo.setObjectName(u"channel_combo")
+        self.channel_combo.setMinimumSize(QSize(0, 22))
+        self.channel_combo.setMaximumSize(QSize(16777215, 22))
 
-        self.horizontalLayout.addWidget(self.no_fr)
-
-
-        self.gridLayout_2.addWidget(self.widget_5, 4, 2, 1, 1, Qt.AlignLeft)
-
-        self.label_5 = QLabel(self.left_side)
-        self.label_5.setObjectName(u"label_5")
-        self.label_5.setMinimumSize(QSize(0, 30))
-        self.label_5.setMaximumSize(QSize(16777215, 30))
-
-        self.gridLayout_2.addWidget(self.label_5, 4, 0, 1, 1)
-
-        self.label_3 = QLabel(self.left_side)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setMinimumSize(QSize(0, 30))
-        self.label_3.setMaximumSize(QSize(16777215, 30))
-
-        self.gridLayout_2.addWidget(self.label_3, 2, 0, 1, 1)
-
-        self.label_2 = QLabel(self.left_side)
-        self.label_2.setObjectName(u"label_2")
-        self.label_2.setMinimumSize(QSize(0, 30))
-        self.label_2.setMaximumSize(QSize(16777215, 30))
-
-        self.gridLayout_2.addWidget(self.label_2, 1, 0, 1, 1)
-
-        self.label = QLabel(self.left_side)
-        self.label.setObjectName(u"label")
-        self.label.setMinimumSize(QSize(0, 30))
-        self.label.setMaximumSize(QSize(200, 30))
-
-        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
-
-        self.widget_4 = QWidget(self.left_side)
-        self.widget_4.setObjectName(u"widget_4")
-        self.gridLayout_6 = QGridLayout(self.widget_4)
-        self.gridLayout_6.setObjectName(u"gridLayout_6")
-        self.type_filter = QComboBox(self.widget_4)
-        self.type_filter.addItem("")
-        self.type_filter.addItem("")
-        self.type_filter.setObjectName(u"type_filter")
-        self.type_filter.setMinimumSize(QSize(0, 22))
-        self.type_filter.setMaximumSize(QSize(16777215, 22))
-
-        self.gridLayout_6.addWidget(self.type_filter, 0, 0, 1, 1)
+        self.gridLayout_4.addWidget(self.channel_combo, 0, 0, 1, 1)
 
 
-        self.gridLayout_2.addWidget(self.widget_4, 3, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.widget_2, 1, 2, 1, 1)
+
+        self.widget_8 = QWidget(self.left_side)
+        self.widget_8.setObjectName(u"widget_8")
+        self.gridLayout_9 = QGridLayout(self.widget_8)
+        self.gridLayout_9.setObjectName(u"gridLayout_9")
+        self.session_line = QDoubleSpinBox(self.widget_8)
+        self.session_line.setObjectName(u"session_line")
+        self.session_line.setMinimumSize(QSize(0, 22))
+        self.session_line.setMaximumSize(QSize(16777215, 22))
+        self.session_line.setDecimals(4)
+        self.session_line.setSingleStep(0.010000000000000)
+        self.session_line.setStepType(QAbstractSpinBox.AdaptiveDecimalStepType)
+        self.session_line.setValue(10.000000000000000)
+
+        self.gridLayout_9.addWidget(self.session_line, 0, 0, 1, 1)
+
+
+        self.gridLayout_2.addWidget(self.widget_8, 7, 2, 1, 1)
 
         self.widget = QWidget(self.left_side)
         self.widget.setObjectName(u"widget")
@@ -363,6 +358,100 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
 
         self.gridLayout_2.addWidget(self.widget, 0, 2, 1, 1)
 
+        self.widget_9 = QWidget(self.left_side)
+        self.widget_9.setObjectName(u"widget_9")
+        self.horizontalLayout_2 = QHBoxLayout(self.widget_9)
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.yes_plot = QRadioButton(self.widget_9)
+        self.ratio_plot = QButtonGroup(Digitalfilters_NIDAQ_widget)
+        self.ratio_plot.setObjectName(u"ratio_plot")
+        self.ratio_plot.addButton(self.yes_plot)
+        self.yes_plot.setObjectName(u"yes_plot")
+        self.yes_plot.setChecked(True)
+
+        self.horizontalLayout_2.addWidget(self.yes_plot)
+
+        self.no_plot = QRadioButton(self.widget_9)
+        self.ratio_plot.addButton(self.no_plot)
+        self.no_plot.setObjectName(u"no_plot")
+
+        self.horizontalLayout_2.addWidget(self.no_plot)
+
+
+        self.gridLayout_2.addWidget(self.widget_9, 9, 2, 2, 1, Qt.AlignLeft)
+
+        self.widget_5 = QWidget(self.left_side)
+        self.widget_5.setObjectName(u"widget_5")
+        self.horizontalLayout = QHBoxLayout(self.widget_5)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.yes_fr = QRadioButton(self.widget_5)
+        self.ratio_fr = QButtonGroup(Digitalfilters_NIDAQ_widget)
+        self.ratio_fr.setObjectName(u"ratio_fr")
+        self.ratio_fr.addButton(self.yes_fr)
+        self.yes_fr.setObjectName(u"yes_fr")
+        self.yes_fr.setChecked(True)
+
+        self.horizontalLayout.addWidget(self.yes_fr)
+
+        self.no_fr = QRadioButton(self.widget_5)
+        self.ratio_fr.addButton(self.no_fr)
+        self.no_fr.setObjectName(u"no_fr")
+
+        self.horizontalLayout.addWidget(self.no_fr)
+
+
+        self.gridLayout_2.addWidget(self.widget_5, 8, 2, 1, 1, Qt.AlignLeft)
+
+        self.widget_7 = QWidget(self.left_side)
+        self.widget_7.setObjectName(u"widget_7")
+        self.gridLayout_8 = QGridLayout(self.widget_7)
+        self.gridLayout_8.setObjectName(u"gridLayout_8")
+        self.sample_line = QDoubleSpinBox(self.widget_7)
+        self.sample_line.setObjectName(u"sample_line")
+        self.sample_line.setMinimumSize(QSize(0, 22))
+        self.sample_line.setMaximumSize(QSize(16777215, 22))
+        self.sample_line.setDecimals(4)
+        self.sample_line.setSingleStep(0.010000000000000)
+        self.sample_line.setStepType(QAbstractSpinBox.AdaptiveDecimalStepType)
+        self.sample_line.setValue(0.500000000000000)
+
+        self.gridLayout_8.addWidget(self.sample_line, 0, 0, 1, 1)
+
+
+        self.gridLayout_2.addWidget(self.widget_7, 5, 2, 2, 1)
+
+        self.label_10 = QLabel(self.left_side)
+        self.label_10.setObjectName(u"label_10")
+        self.label_10.setMinimumSize(QSize(0, 30))
+        self.label_10.setMaximumSize(QSize(16777215, 30))
+
+        self.gridLayout_2.addWidget(self.label_10, 12, 0, 1, 1)
+
+        self.label = QLabel(self.left_side)
+        self.label.setObjectName(u"label")
+        self.label.setMinimumSize(QSize(0, 30))
+        self.label.setMaximumSize(QSize(200, 30))
+
+        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
+
+        self.widget_11 = QWidget(self.left_side)
+        self.widget_11.setObjectName(u"widget_11")
+        self.horizontalLayout_4 = QHBoxLayout(self.widget_11)
+        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
+        self.path_line = QLineEdit(self.widget_11)
+        self.path_line.setObjectName(u"path_line")
+        self.path_line.setMinimumSize(QSize(0, 22))
+
+        self.horizontalLayout_4.addWidget(self.path_line)
+
+        self.browse_button = QPushButton(self.widget_11)
+        self.browse_button.setObjectName(u"browse_button")
+
+        self.horizontalLayout_4.addWidget(self.browse_button)
+
+
+        self.gridLayout_2.addWidget(self.widget_11, 12, 2, 2, 1)
+
         self.widget_3 = QWidget(self.left_side)
         self.widget_3.setObjectName(u"widget_3")
         self.gridLayout_5 = QGridLayout(self.widget_3)
@@ -377,85 +466,102 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
 
         self.gridLayout_2.addWidget(self.widget_3, 2, 2, 1, 1)
 
-        self.label_4 = QLabel(self.left_side)
-        self.label_4.setObjectName(u"label_4")
-        self.label_4.setMinimumSize(QSize(0, 30))
-        self.label_4.setMaximumSize(QSize(16777215, 30))
+        self.widget_10 = QWidget(self.left_side)
+        self.widget_10.setObjectName(u"widget_10")
+        self.horizontalLayout_3 = QHBoxLayout(self.widget_10)
+        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.yes_save = QRadioButton(self.widget_10)
+        self.ratio_save = QButtonGroup(Digitalfilters_NIDAQ_widget)
+        self.ratio_save.setObjectName(u"ratio_save")
+        self.ratio_save.addButton(self.yes_save)
+        self.yes_save.setObjectName(u"yes_save")
+        self.yes_save.setChecked(True)
 
-        self.gridLayout_2.addWidget(self.label_4, 3, 0, 1, 1)
+        self.horizontalLayout_3.addWidget(self.yes_save)
 
-        self.widget_2 = QWidget(self.left_side)
-        self.widget_2.setObjectName(u"widget_2")
-        self.gridLayout_4 = QGridLayout(self.widget_2)
-        self.gridLayout_4.setObjectName(u"gridLayout_4")
-        self.channel_combo = QComboBox(self.widget_2)
-        self.channel_combo.setObjectName(u"channel_combo")
-        self.channel_combo.setMinimumSize(QSize(0, 22))
-        self.channel_combo.setMaximumSize(QSize(16777215, 22))
+        self.no_save = QRadioButton(self.widget_10)
+        self.ratio_save.addButton(self.no_save)
+        self.no_save.setObjectName(u"no_save")
 
-        self.gridLayout_4.addWidget(self.channel_combo, 0, 0, 1, 1)
+        self.horizontalLayout_3.addWidget(self.no_save)
 
 
-        self.gridLayout_2.addWidget(self.widget_2, 1, 2, 1, 1)
+        self.gridLayout_2.addWidget(self.widget_10, 11, 2, 1, 1, Qt.AlignLeft)
 
-        self.line_2 = QFrame(self.left_side)
-        self.line_2.setObjectName(u"line_2")
-        self.line_2.setFrameShape(QFrame.VLine)
-        self.line_2.setFrameShadow(QFrame.Sunken)
+        self.line_7 = QFrame(self.left_side)
+        self.line_7.setObjectName(u"line_7")
+        self.line_7.setFrameShape(QFrame.VLine)
+        self.line_7.setFrameShadow(QFrame.Sunken)
 
-        self.gridLayout_2.addWidget(self.line_2, 1, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.line_7, 0, 1, 14, 1)
 
-        self.line_3 = QFrame(self.left_side)
-        self.line_3.setObjectName(u"line_3")
-        self.line_3.setFrameShape(QFrame.VLine)
-        self.line_3.setFrameShadow(QFrame.Sunken)
+        self.label_9 = QLabel(self.left_side)
+        self.label_9.setObjectName(u"label_9")
+        self.label_9.setMinimumSize(QSize(0, 30))
+        self.label_9.setMaximumSize(QSize(16777215, 30))
 
-        self.gridLayout_2.addWidget(self.line_3, 2, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_9, 11, 0, 1, 1)
 
-        self.line_4 = QFrame(self.left_side)
-        self.line_4.setObjectName(u"line_4")
-        self.line_4.setFrameShape(QFrame.VLine)
-        self.line_4.setFrameShadow(QFrame.Sunken)
+        self.label_8 = QLabel(self.left_side)
+        self.label_8.setObjectName(u"label_8")
+        self.label_8.setMinimumSize(QSize(0, 30))
+        self.label_8.setMaximumSize(QSize(16777215, 30))
 
-        self.gridLayout_2.addWidget(self.line_4, 3, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_8, 10, 0, 1, 1)
 
-        self.line_5 = QFrame(self.left_side)
-        self.line_5.setObjectName(u"line_5")
-        self.line_5.setFrameShape(QFrame.VLine)
-        self.line_5.setFrameShadow(QFrame.Sunken)
+        self.label_5 = QLabel(self.left_side)
+        self.label_5.setObjectName(u"label_5")
+        self.label_5.setMinimumSize(QSize(0, 30))
+        self.label_5.setMaximumSize(QSize(16777215, 30))
 
-        self.gridLayout_2.addWidget(self.line_5, 4, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_5, 8, 0, 1, 1)
 
-        self.line_6 = QFrame(self.left_side)
-        self.line_6.setObjectName(u"line_6")
-        self.line_6.setFrameShape(QFrame.VLine)
-        self.line_6.setFrameShadow(QFrame.Sunken)
+        self.label_3 = QLabel(self.left_side)
+        self.label_3.setObjectName(u"label_3")
+        self.label_3.setMinimumSize(QSize(0, 30))
+        self.label_3.setMaximumSize(QSize(16777215, 30))
 
-        self.gridLayout_2.addWidget(self.line_6, 0, 1, 1, 1)
+        self.gridLayout_2.addWidget(self.label_3, 2, 0, 1, 1)
+
+        self.label_2 = QLabel(self.left_side)
+        self.label_2.setObjectName(u"label_2")
+        self.label_2.setMinimumSize(QSize(0, 30))
+        self.label_2.setMaximumSize(QSize(16777215, 30))
+
+        self.gridLayout_2.addWidget(self.label_2, 1, 0, 1, 1)
+
+        self.label_7 = QLabel(self.left_side)
+        self.label_7.setObjectName(u"label_7")
+        self.label_7.setMinimumSize(QSize(0, 30))
+        self.label_7.setMaximumSize(QSize(16777215, 30))
+
+        self.gridLayout_2.addWidget(self.label_7, 7, 0, 1, 1)
+
+        self.widget_4 = QWidget(self.left_side)
+        self.widget_4.setObjectName(u"widget_4")
+        self.gridLayout_6 = QGridLayout(self.widget_4)
+        self.gridLayout_6.setObjectName(u"gridLayout_6")
+        self.type_filter = QComboBox(self.widget_4)
+        self.type_filter.addItem("")
+        self.type_filter.addItem("")
+        self.type_filter.setObjectName(u"type_filter")
+        self.type_filter.setMinimumSize(QSize(0, 22))
+        self.type_filter.setMaximumSize(QSize(16777215, 22))
+
+        self.gridLayout_6.addWidget(self.type_filter, 0, 0, 1, 1)
+
+
+        self.gridLayout_2.addWidget(self.widget_4, 3, 2, 1, 1)
+
+        self.label_6 = QLabel(self.left_side)
+        self.label_6.setObjectName(u"label_6")
+        self.label_6.setMinimumSize(QSize(0, 30))
+        self.label_6.setMaximumSize(QSize(16777215, 30))
+
+        self.gridLayout_2.addWidget(self.label_6, 6, 0, 1, 1)
 
 
         self.gridLayout.addWidget(self.left_side, 3, 0, 1, 1)
-
-        self.line = QFrame(Digitalfilters_NIDAQ_widget)
-        self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.HLine)
-        self.line.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout.addWidget(self.line, 4, 0, 1, 1)
-
-        self.widget_6 = QWidget(Digitalfilters_NIDAQ_widget)
-        self.widget_6.setObjectName(u"widget_6")
-        self.gridLayout_7 = QGridLayout(self.widget_6)
-        self.gridLayout_7.setObjectName(u"gridLayout_7")
-        self.pushButton = QPushButton(self.widget_6)
-        self.pushButton.setObjectName(u"pushButton")
-        self.pushButton.setMinimumSize(QSize(0, 30))
-        self.pushButton.setMaximumSize(QSize(100, 30))
-
-        self.gridLayout_7.addWidget(self.pushButton, 0, 0, 1, 1)
-
-
-        self.gridLayout.addWidget(self.widget_6, 5, 0, 1, 1)
 
 
         self.retranslateUi(Digitalfilters_NIDAQ_widget)
@@ -465,17 +571,27 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
 
     def retranslateUi(self, Digitalfilters_NIDAQ_widget):
         Digitalfilters_NIDAQ_widget.setWindowTitle(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Form", None))
+        self.filter_button.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"FILTER", None))
+        self.label_4.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Select your filter:", None))
+        self.reload_devices.setText("")
+        self.yes_plot.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Yes", None))
+        self.no_plot.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"No", None))
         self.yes_fr.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Yes", None))
         self.no_fr.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"No", None))
+        self.label_10.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Path", None))
+        self.label.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Choose device:", None))
+        self.browse_button.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Browse", None))
+        self.yes_save.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Yes", None))
+        self.no_save.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"No", None))
+        self.label_9.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Save data?", None))
+        self.label_8.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Plot data?", None))
         self.label_5.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Plot frequency response?", None))
         self.label_3.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Terminal Config.", None))
         self.label_2.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Choose channel:", None))
-        self.label.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Choose device:", None))
+        self.label_7.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Session duration (s)", None))
         self.type_filter.setItemText(0, QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"FIR", None))
         self.type_filter.setItemText(1, QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"IIR", None))
 
-        self.reload_devices.setText("")
-        self.label_4.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Select your filter:", None))
-        self.pushButton.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"FILTER", None))
+        self.label_6.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Sample Period (s)", None))
     # retranslateUi
 

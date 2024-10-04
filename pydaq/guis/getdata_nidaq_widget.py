@@ -48,7 +48,7 @@ class GetData_NIDAQ_Widget(QWidget, Ui_NIDAQ_GetData_W):
         self.device_combo.currentIndexChanged.connect(self.update_channels)
         self.reload_devices.released.connect(self.reload_devices_handler)
         self.signals = GuiSignals()
-
+        
     def locate_path(self):  # Calling the Folder Browser Widget
         output_folder_path = QFileDialog.getExistingDirectory(
             self, caption="Choose a folder to save the data file"
@@ -141,3 +141,5 @@ class GetData_NIDAQ_Widget(QWidget, Ui_NIDAQ_GetData_W):
 
         # Reconnecting the signal
         self.device_combo.currentIndexChanged.connect(self.update_channels)
+
+    
