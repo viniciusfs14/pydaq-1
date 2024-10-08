@@ -496,8 +496,8 @@ QScrollArea{
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>82</width>
-                <height>28</height>
+                <width>599</width>
+                <height>401</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_10">
@@ -525,8 +525,8 @@ QScrollArea{
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>82</width>
-                <height>28</height>
+                <width>599</width>
+                <height>401</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_9">
@@ -628,8 +628,8 @@ QScrollArea{
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>65</width>
-                <height>28</height>
+                <width>599</width>
+                <height>401</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_12">
@@ -657,8 +657,8 @@ QScrollArea{
                <rect>
                 <x>0</x>
                 <y>0</y>
-                <width>65</width>
-                <height>28</height>
+                <width>599</width>
+                <height>401</height>
                </rect>
               </property>
               <layout class="QGridLayout" name="gridLayout_14">

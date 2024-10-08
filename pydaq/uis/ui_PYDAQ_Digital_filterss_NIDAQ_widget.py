@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PYDAQ_Digital_filterss_NIDAQ_widgetglznkG.ui'
+## Form generated from reading UI file 'PYDAQ_Digital_filterss_NIDAQ_widgetrQApmE.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -19,6 +19,7 @@ from PySide6.QtWidgets import (QAbstractSpinBox, QApplication, QButtonGroup, QCo
     QDoubleSpinBox, QFrame, QGridLayout, QHBoxLayout,
     QLabel, QLineEdit, QPushButton, QRadioButton,
     QSizePolicy, QWidget)
+
 
 class Ui_Digitalfilters_NIDAQ_widget(object):
     def setupUi(self, Digitalfilters_NIDAQ_widget):
@@ -334,6 +335,7 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
         self.session_line.setMinimumSize(QSize(0, 22))
         self.session_line.setMaximumSize(QSize(16777215, 22))
         self.session_line.setDecimals(4)
+        self.session_line.setMaximum(900000000000.000000000000000)
         self.session_line.setSingleStep(0.010000000000000)
         self.session_line.setStepType(QAbstractSpinBox.AdaptiveDecimalStepType)
         self.session_line.setValue(10.000000000000000)

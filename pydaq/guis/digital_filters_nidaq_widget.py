@@ -2,12 +2,15 @@ import nidaqmx
 import os
 import matplotlib.pyplot as plt
 import numpy as np
+import time
 
 from ..uis.ui_PYDAQ_Digital_filterss_NIDAQ_widget import Ui_Digitalfilters_NIDAQ_widget
 from ..uis.ui_PYDAQ_FIR_widget import Ui_FIR_window
 from ..uis.ui_PYDAQ_IIR_widget import Ui_IIR_window
 
 from PySide6.QtWidgets import QFileDialog, QWidget
+from PySide6.QtCore import QThread, Signal
+
 from ..get_data import GetData
 from .error_window_gui import Error_window
 from pydaq.utils.signals import GuiSignals
@@ -16,6 +19,8 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
     def __init__(self, *args):
         super(Digital_Filters_NIDAQ_Widget, self).__init__()
         self.setupUi(self)
+        self.signals = GuiSignals()
+        
         self._nidaq_info()
         
         try:
@@ -28,11 +33,8 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
             chan = ""
             defchan = ""
             
-        self.type_filter.currentTextChanged.connect(self.check_filter)
-        self.fir_window = None
-        self.iir_window = None
+       
         # Gathering nidaq info
-        
         self.device_combo.addItems(self.device_type)
         self.channel_combo.addItems(chan)
         self.terminal_combo.addItems(["Diff", "RSE", "NRSE"])
@@ -47,11 +49,18 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
         self.path_line.setText(
             os.path.join(os.path.join(os.path.expanduser("~")), "Desktop")
         )
+        
+        # Signals 
+        self.type_filter.currentTextChanged.connect(self.check_filter)
+        
+        self.fir_window = None
+        self.iir_window = None
+        
         self.filter_button.clicked.connect(self.start_func_get_data)
         self.browse_button.clicked.connect(self.locate_path)
         self.device_combo.currentIndexChanged.connect(self.update_channels)
-        self.fr_button.clicked.connect(self.frequency_response)
-        self.signals = GuiSignals()
+        #self.fr_button.clicked.connect(self.check)
+        self.signals.returned.connect(self.frequency_response)
         
         
     def _nidaq_info(self):
@@ -141,7 +150,8 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
             g.data = []
             g.time_var = []
             g.error_path = False
-
+            
+    
         except BaseException:
             error_w = Error_window()
             error_w.exec()
@@ -152,23 +162,39 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
             g.get_data_nidaq()
             self.signals.returned.emit(g)
             
-   
     def frequency_response(self):
-        # open the data.dat and time.dat and make the fft
-        self.time_way = self.path_line.text() + '\\' + 'time.dat'
-        self.data_way = self.path_line.text() + '\\' + 'data.dat'
-        
-        # load the archive
-        self.time = np.loadtxt(self.time_way)
-        self.data = np.loadtxt(self.data_way)
-        
-        plt.plot(self.time, self.data)
-        plt.grid()
-        plt.show()
-        
-        
-        
-        
+        if self.yes_fr.isChecked():
+            # open the data.dat and time.dat and make the fft
+            self.time_way = self.path_line.text() + '\\' + 'time.dat'
+            self.data_way = self.path_line.text() + '\\' + 'data.dat'
+            
+            # load the archive
+            self.time = np.loadtxt(self.time_way)
+            self.data = np.loadtxt(self.data_way)
+            
+            # tests
+            self.T = np.mean(np.diff(self.time))
+            self.Fs = 1/self.T 
+            
+            self.N = len(self.data)
+            
+            self.fft_sinal = np.fft.fft(self.data)
+            self.fft_sinal = np.abs(self.fft_sinal[:self.N//2])
+            self.freqs = np.fft.fftfreq(self.N, self.T)[:self.N//2]
+            
+            plt.figure()
+            plt.plot(self.freqs, self.fft_sinal)
+            #plt.plot(self.time, self.data)
+            plt.xlabel('Frequency [Hz]')
+            plt.ylabel('Amplitude')
+            plt.title('Frequency Response')
+            plt.grid()
+            plt.show()
+            
+        else:
+            return
+    
+         
 class FirWindow(QWidget, Ui_FIR_window): # Call the FirWindow widget
     def __init__(self):
         super(FirWindow, self).__init__()
@@ -180,5 +206,4 @@ class IrrWindow(QWidget, Ui_IIR_window): # Call the Iir window widget
         super(IrrWindow, self).__init__()
         self.setupUi(self)
         self.close_iir_button.clicked.connect(self.close)
-        
         

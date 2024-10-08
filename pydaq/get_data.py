@@ -42,6 +42,7 @@ class GetData(Base):
             session_duration=10.0,
             save=True,
             plot=True,
+            plot_fr = True,
     ):
         super().__init__()
         self.device = device
@@ -50,6 +51,7 @@ class GetData(Base):
         self.session_duration = session_duration
         self.save = save
         self.plot = plot
+        self.plot_fr = plot_fr
 
         # Terminal configuration
         self.terminal = self.term_map[terminal]
@@ -165,6 +167,8 @@ class GetData(Base):
             print("\nData saved ...")
 
         return
+
+        
 
     def get_data_arduino(self):
         """

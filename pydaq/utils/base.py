@@ -104,6 +104,7 @@ class Base:
         for d in data:
             file.write(str(d) + "\n")
         file.close()
+        
 
     def _nidaq_info(self):
         """Gathering NIDAQ info"""
@@ -118,3 +119,5 @@ class Base:
             self.device_names.append(device.name)
             self.device_categories.append(device.product_category)
             self.device_type.append(device.product_type)
+
+    

@@ -2,7 +2,6 @@ from pydaq.pydaq_global import PydaqGui
 PydaqGui()
 
 # Próximos passos....:
-# NIDAQ simulado, NIMAX
 # Digital Filters para o NIDAQ
 # Documentação (IMPORTANTE)
 # Notebooks documentando, passo a passo.
