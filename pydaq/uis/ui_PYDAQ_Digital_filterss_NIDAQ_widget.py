@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PYDAQ_Digital_filterss_NIDAQ_widgetrQApmE.ui'
+## Form generated from reading UI file 'PYDAQ_Digital_filterss_NIDAQ_widgetflydPK.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -270,6 +270,46 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
 "	border: 2px solid rgb(255, 255, 255);\n"
 "}\n"
 "\n"
+"QDoubleSpinBox::up-button{\n"
+"    image: url(:/imgs/imgs/drop_up_arrow.png);\n"
+"	width: 11px;\n"
+"\n"
+"	background-color: rgb(0, 79, 0);\n"
+"	border-top: 1.5px solid rgb(127, 167, 127);\n"
+"	border-left: 1.5px solid rgb(127, 167, 127);\n"
+"\n"
+"	border-bottom: 1.5px solid rgb(0, 0, 0);\n"
+"	border-right: 1.5px solid rgb(0, 0, 0);\n"
+"}\n"
+"\n"
+"QDoubleSpinBox::up-button:pressed{\n"
+"	border: 2px solid rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"QDou"
+                        "bleSpinBox::up-button:hover{\n"
+"	background-color: rgb(0, 50, 0);\n"
+"}\n"
+"\n"
+"QDoubleSpinBox::down-button{\n"
+"    image: url(:/imgs/imgs/drop_down_arrow.png);\n"
+"	width: 11px;\n"
+"\n"
+"	background-color: rgb(0, 79, 0);\n"
+"	border-top: 1.5px solid rgb(127, 167, 127);\n"
+"	border-left: 1.5px solid rgb(127, 167, 127);\n"
+"\n"
+"	border-bottom: 1.5px solid rgb(0, 0, 0);\n"
+"	border-right: 1.5px solid rgb(0, 0, 0);\n"
+"}\n"
+"\n"
+"QDoubleSpinBox::down-button:pressed{\n"
+"	border: 2px solid rgb(255, 255, 255);\n"
+"}\n"
+"\n"
+"QDoubleSpinBox::down-button:hover{\n"
+"	background-color: rgb(0, 50, 0);\n"
+"}\n"
 "")
         self.gridLayout = QGridLayout(Digitalfilters_NIDAQ_widget)
         self.gridLayout.setObjectName(u"gridLayout")
@@ -283,13 +323,6 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
         self.filter_button.setMaximumSize(QSize(100, 30))
 
         self.gridLayout_7.addWidget(self.filter_button, 0, 0, 1, 1)
-
-        self.fr_button = QPushButton(self.widget_6)
-        self.fr_button.setObjectName(u"fr_button")
-        self.fr_button.setMinimumSize(QSize(0, 30))
-        self.fr_button.setMaximumSize(QSize(100, 30))
-
-        self.gridLayout_7.addWidget(self.fr_button, 0, 1, 1, 1)
 
 
         self.gridLayout.addWidget(self.widget_6, 5, 0, 1, 1)
@@ -349,19 +382,19 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
         self.widget.setObjectName(u"widget")
         self.gridLayout_3 = QGridLayout(self.widget)
         self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.reload_devices = QPushButton(self.widget)
-        self.reload_devices.setObjectName(u"reload_devices")
-        self.reload_devices.setMinimumSize(QSize(22, 22))
-        self.reload_devices.setMaximumSize(QSize(22, 22))
-
-        self.gridLayout_3.addWidget(self.reload_devices, 0, 1, 1, 1)
-
         self.device_combo = QComboBox(self.widget)
         self.device_combo.setObjectName(u"device_combo")
         self.device_combo.setMinimumSize(QSize(0, 22))
         self.device_combo.setMaximumSize(QSize(16777215, 22))
 
         self.gridLayout_3.addWidget(self.device_combo, 0, 0, 1, 1)
+
+        self.reload_devices = QPushButton(self.widget)
+        self.reload_devices.setObjectName(u"reload_devices")
+        self.reload_devices.setMinimumSize(QSize(22, 22))
+        self.reload_devices.setMaximumSize(QSize(22, 22))
+
+        self.gridLayout_3.addWidget(self.reload_devices, 0, 1, 1, 1)
 
 
         self.gridLayout_2.addWidget(self.widget, 0, 2, 1, 1)
@@ -580,7 +613,6 @@ class Ui_Digitalfilters_NIDAQ_widget(object):
     def retranslateUi(self, Digitalfilters_NIDAQ_widget):
         Digitalfilters_NIDAQ_widget.setWindowTitle(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Form", None))
         self.filter_button.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"FILTER", None))
-        self.fr_button.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"FR", None))
         self.label_4.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Select your filter:", None))
         self.reload_devices.setText("")
         self.yes_plot.setText(QCoreApplication.translate("Digitalfilters_NIDAQ_widget", u"Yes", None))

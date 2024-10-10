@@ -253,6 +253,45 @@ QPushButton#reload_devices:pressed{
 	border: 2px solid rgb(255, 255, 255);
 }
 
+QDoubleSpinBox::up-button{
+    image: url(:/imgs/imgs/drop_up_arrow.png);
+	width: 11px;
+
+	background-color: rgb(0, 79, 0);
+	border-top: 1.5px solid rgb(127, 167, 127);
+	border-left: 1.5px solid rgb(127, 167, 127);
+
+	border-bottom: 1.5px solid rgb(0, 0, 0);
+	border-right: 1.5px solid rgb(0, 0, 0);
+}
+
+QDoubleSpinBox::up-button:pressed{
+	border: 2px solid rgb(255, 255, 255);
+}
+
+QDoubleSpinBox::up-button:hover{
+	background-color: rgb(0, 50, 0);
+}
+
+QDoubleSpinBox::down-button{
+    image: url(:/imgs/imgs/drop_down_arrow.png);
+	width: 11px;
+
+	background-color: rgb(0, 79, 0);
+	border-top: 1.5px solid rgb(127, 167, 127);
+	border-left: 1.5px solid rgb(127, 167, 127);
+
+	border-bottom: 1.5px solid rgb(0, 0, 0);
+	border-right: 1.5px solid rgb(0, 0, 0);
+}
+
+QDoubleSpinBox::down-button:pressed{
+	border: 2px solid rgb(255, 255, 255);
+}
+
+QDoubleSpinBox::down-button:hover{
+	background-color: rgb(0, 50, 0);
+}
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
@@ -275,25 +314,6 @@ QPushButton#reload_devices:pressed{
         </property>
         <property name="text">
          <string>FILTER</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QPushButton" name="fr_button">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>100</width>
-          <height>30</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>FR</string>
         </property>
        </widget>
       </item>
@@ -391,6 +411,22 @@ QPushButton#reload_devices:pressed{
       <item row="0" column="2">
        <widget class="QWidget" name="widget" native="true">
         <layout class="QGridLayout" name="gridLayout_3">
+         <item row="0" column="0">
+          <widget class="QComboBox" name="device_combo">
+           <property name="minimumSize">
+            <size>
+             <width>0</width>
+             <height>22</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>16777215</width>
+             <height>22</height>
+            </size>
+           </property>
+          </widget>
+         </item>
          <item row="0" column="1">
           <widget class="QPushButton" name="reload_devices">
            <property name="minimumSize">
@@ -407,22 +443,6 @@ QPushButton#reload_devices:pressed{
            </property>
            <property name="text">
             <string/>
-           </property>
-          </widget>
-         </item>
-         <item row="0" column="0">
-          <widget class="QComboBox" name="device_combo">
-           <property name="minimumSize">
-            <size>
-             <width>0</width>
-             <height>22</height>
-            </size>
-           </property>
-           <property name="maximumSize">
-            <size>
-             <width>16777215</width>
-             <height>22</height>
-            </size>
            </property>
           </widget>
          </item>
@@ -816,7 +836,7 @@ QPushButton#reload_devices:pressed{
  <connections/>
  <buttongroups>
   <buttongroup name="ratio_fr"/>
-  <buttongroup name="ratio_save"/>
   <buttongroup name="ratio_plot"/>
+  <buttongroup name="ratio_save"/>
  </buttongroups>
 </ui>

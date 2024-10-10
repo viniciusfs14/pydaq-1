@@ -2,14 +2,14 @@ import nidaqmx
 import os
 import matplotlib.pyplot as plt
 import numpy as np
-import time
 
 from ..uis.ui_PYDAQ_Digital_filterss_NIDAQ_widget import Ui_Digitalfilters_NIDAQ_widget
-from ..uis.ui_PYDAQ_FIR_widget import Ui_FIR_window
-from ..uis.ui_PYDAQ_IIR_widget import Ui_IIR_window
-
+# from ..uis.ui_PYDAQ_FIR_widget import Ui_FIR_window
+# from ..uis.ui_PYDAQ_IIR_widget import Ui_IIR_window
+from ..guis.fir_window_widget import FirWindow
+from ..guis.iir_window_widget import IrrWindow
 from PySide6.QtWidgets import QFileDialog, QWidget
-from PySide6.QtCore import QThread, Signal
+
 
 from ..get_data import GetData
 from .error_window_gui import Error_window
@@ -194,16 +194,5 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
         else:
             return
     
-         
-class FirWindow(QWidget, Ui_FIR_window): # Call the FirWindow widget
-    def __init__(self):
-        super(FirWindow, self).__init__()
-        self.setupUi(self)
-        self.close_fir_button.clicked.connect(self.close)
-        
-class IrrWindow(QWidget, Ui_IIR_window): # Call the Iir window widget
-    def __init__(self):
-        super(IrrWindow, self).__init__()
-        self.setupUi(self)
-        self.close_iir_button.clicked.connect(self.close)
-        
+            
+
