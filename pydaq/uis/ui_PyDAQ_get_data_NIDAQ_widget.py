@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PyDAQ_get_data_NIDAQ_widgetBHOrOU.ui'
+## Form generated from reading UI file 'PyDAQ_get_data_NIDAQ_widgetQKrJuc.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -25,7 +25,7 @@ class Ui_NIDAQ_GetData_W(object):
     def setupUi(self, NIDAQ_GetData_W):
         if not NIDAQ_GetData_W.objectName():
             NIDAQ_GetData_W.setObjectName(u"NIDAQ_GetData_W")
-        NIDAQ_GetData_W.resize(477, 447)
+        NIDAQ_GetData_W.resize(477, 491)
         NIDAQ_GetData_W.setStyleSheet(u"QComboBox QAbstractItemView {\n"
 "    background-color: rgb(77, 77, 77);\n"
 "}\n"
@@ -441,13 +441,14 @@ class Ui_NIDAQ_GetData_W(object):
         self.filter_radio_group.setObjectName(u"filter_radio_group")
         self.filter_radio_group.addButton(self.yes_radio)
         self.yes_radio.setObjectName(u"yes_radio")
-        self.yes_radio.setChecked(True)
+        self.yes_radio.setChecked(False)
 
         self.horizontalLayout_4.addWidget(self.yes_radio)
 
         self.No_radio = QRadioButton(self.widget_10)
         self.filter_radio_group.addButton(self.No_radio)
         self.No_radio.setObjectName(u"No_radio")
+        self.No_radio.setChecked(True)
 
         self.horizontalLayout_4.addWidget(self.No_radio, 0, Qt.AlignLeft)
 

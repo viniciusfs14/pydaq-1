@@ -5,6 +5,7 @@ from PySide6.QtWidgets import QFileDialog, QWidget
 from pydaq.utils.signals import GuiSignals
 
 from ..uis.ui_PyDAQ_get_data_NIDAQ_widget import Ui_NIDAQ_GetData_W
+from ..guis.digital_filters_nidaq_widget import Digital_Filters_NIDAQ_Widget
 from .error_window_gui import Error_window
 from ..get_data import GetData
 
@@ -47,8 +48,16 @@ class GetData_NIDAQ_Widget(QWidget, Ui_NIDAQ_GetData_W):
         self.start_get_data.released.connect(self.start_func_get_data)
         self.device_combo.currentIndexChanged.connect(self.update_channels)
         self.reload_devices.released.connect(self.reload_devices_handler)
+        self.yes_radio.toggled.connect(self.openFilterWindow)
         self.signals = GuiSignals()
         
+        
+        
+    def openFilterWindow(self):
+        if self.yes_radio.isChecked():
+            self.filterWindow = Digital_Filters_NIDAQ_Widget()
+            self.filterWindow.show()
+
     def locate_path(self):  # Calling the Folder Browser Widget
         output_folder_path = QFileDialog.getExistingDirectory(
             self, caption="Choose a folder to save the data file"
