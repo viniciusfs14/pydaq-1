@@ -9,7 +9,7 @@ data_way = "C:\\Users\\55319\\Desktop\\testes\\data.dat"
 time = np.loadtxt(time_way)
 data = np.loadtxt(data_way)
 
-numtaps = 100
+numtaps = 9
 cutoff = 0.1
 fs = 1/np.mean(np.diff(time))
 

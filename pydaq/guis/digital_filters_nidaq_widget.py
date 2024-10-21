@@ -4,12 +4,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 from ..uis.ui_PYDAQ_Digital_filterss_NIDAQ_widget import Ui_Digitalfilters_NIDAQ_widget
-# from ..uis.ui_PYDAQ_FIR_widget import Ui_FIR_window
-# from ..uis.ui_PYDAQ_IIR_widget import Ui_IIR_window
+
 from ..guis.fir_window_widget import FirWindow
 from ..guis.iir_window_widget import IrrWindow
 from PySide6.QtWidgets import QFileDialog, QWidget
-
 
 from ..get_data import GetData
 from .error_window_gui import Error_window
@@ -127,6 +125,9 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
             self.iir_window = IrrWindow()
         self.iir_window.show()
         
+    def ShowDigitalWindow(self):
+        pass
+        
     def start_func_get_data(self):  # Start getting data
         try:
             # Instantiating the GetData class
@@ -184,7 +185,7 @@ class Digital_Filters_NIDAQ_Widget(QWidget, Ui_Digitalfilters_NIDAQ_widget):
             
             plt.figure()
             plt.plot(self.freqs, self.fft_sinal)
-            #plt.plot(self.time, self.data)
+            plt.plot(self.time, self.data)
             plt.xlabel('Frequency [Hz]')
             plt.ylabel('Amplitude')
             plt.title('Frequency Response')
