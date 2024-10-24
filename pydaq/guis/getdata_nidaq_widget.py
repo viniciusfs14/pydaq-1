@@ -49,6 +49,7 @@ class GetData_NIDAQ_Widget(QWidget, Ui_NIDAQ_GetData_W):
         self.device_combo.currentIndexChanged.connect(self.update_channels)
         self.reload_devices.released.connect(self.reload_devices_handler)
         self.yes_radio.toggled.connect(self.openFilterWindow)
+        self.teste.released.connect(self.var)
         self.signals = GuiSignals()
         
         
@@ -57,7 +58,11 @@ class GetData_NIDAQ_Widget(QWidget, Ui_NIDAQ_GetData_W):
             self.filterWindow = Digital_Filters_NIDAQ_Widget()
             self.filterWindow.show()
             
-  
+    def var(self):
+        self.var = Digital_Filters_NIDAQ_Widget()
+        self.fs = self.var.fs_fir.text()
+        print(self.fs)
+        
              
     def locate_path(self):  # Calling the Folder Browser Widget
         output_folder_path = QFileDialog.getExistingDirectory(
