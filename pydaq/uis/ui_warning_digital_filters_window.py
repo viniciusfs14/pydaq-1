@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 ################################################################################
-## Form generated from reading UI file 'PYDAQ_FIR_widgetcqgLmG.ui'
+## Form generated from reading UI file 'warning_digital_filters_windowmdJvGY.ui'
 ##
 ## Created by: Qt User Interface Compiler version 6.6.1
 ##
@@ -15,16 +15,15 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QComboBox, QFrame, QGridLayout,
-    QLabel, QLineEdit, QPushButton, QSizePolicy,
-    QWidget)
+from PySide6.QtWidgets import (QApplication, QDialog, QGridLayout, QHBoxLayout,
+    QLabel, QPushButton, QSizePolicy, QWidget)
 
-class Ui_FIR_window(object):
-    def setupUi(self, FIR_window):
-        if not FIR_window.objectName():
-            FIR_window.setObjectName(u"FIR_window")
-        FIR_window.resize(431, 163)
-        FIR_window.setStyleSheet(u"QWidget{\n"
+class Ui_Dialog_rt_filter(object):
+    def setupUi(self, Dialog_rt_filter):
+        if not Dialog_rt_filter.objectName():
+            Dialog_rt_filter.setObjectName(u"Dialog_rt_filter")
+        Dialog_rt_filter.resize(685, 160)
+        Dialog_rt_filter.setStyleSheet(u"QWidget{\n"
 "	background-color: rgb(64, 64, 64);\n"
 "}\n"
 "\n"
@@ -269,101 +268,57 @@ class Ui_FIR_window(object):
 "}\n"
 "\n"
 "")
-        self.gridLayout = QGridLayout(FIR_window)
+        self.gridLayout = QGridLayout(Dialog_rt_filter)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.widget_2 = QWidget(FIR_window)
-        self.widget_2.setObjectName(u"widget_2")
-        self.gridLayout_3 = QGridLayout(self.widget_2)
-        self.gridLayout_3.setObjectName(u"gridLayout_3")
-        self.fs_combo = QLineEdit(self.widget_2)
-        self.fs_combo.setObjectName(u"fs_combo")
-
-        self.gridLayout_3.addWidget(self.fs_combo, 1, 0, 1, 1)
-
-        self.numtaps_line = QLineEdit(self.widget_2)
-        self.numtaps_line.setObjectName(u"numtaps_line")
-
-        self.gridLayout_3.addWidget(self.numtaps_line, 0, 0, 1, 1)
-
-        self.type_line = QComboBox(self.widget_2)
-        self.type_line.addItem("")
-        self.type_line.addItem("")
-        self.type_line.addItem("")
-        self.type_line.addItem("")
-        self.type_line.setObjectName(u"type_line")
-
-        self.gridLayout_3.addWidget(self.type_line, 2, 0, 1, 1)
-
-
-        self.gridLayout.addWidget(self.widget_2, 0, 2, 1, 1)
-
-        self.save_fir_button = QPushButton(FIR_window)
-        self.save_fir_button.setObjectName(u"save_fir_button")
-        self.save_fir_button.setMaximumSize(QSize(100, 100))
-
-        self.gridLayout.addWidget(self.save_fir_button, 2, 0, 1, 3, Qt.AlignHCenter)
-
-        self.widget = QWidget(FIR_window)
+        self.widget = QWidget(Dialog_rt_filter)
         self.widget.setObjectName(u"widget")
-        self.widget.setMinimumSize(QSize(0, 33))
         self.gridLayout_2 = QGridLayout(self.widget)
         self.gridLayout_2.setObjectName(u"gridLayout_2")
         self.label = QLabel(self.widget)
         self.label.setObjectName(u"label")
-        self.label.setMinimumSize(QSize(0, 22))
-        self.label.setMaximumSize(QSize(16777215, 22))
 
-        self.gridLayout_2.addWidget(self.label, 0, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label, 0, 1, 1, 1, Qt.AlignHCenter)
 
         self.label_2 = QLabel(self.widget)
         self.label_2.setObjectName(u"label_2")
-        self.label_2.setMinimumSize(QSize(0, 22))
-        self.label_2.setMaximumSize(QSize(16777215, 22))
 
-        self.gridLayout_2.addWidget(self.label_2, 1, 0, 1, 1)
+        self.gridLayout_2.addWidget(self.label_2, 1, 1, 1, 1)
 
-        self.label_3 = QLabel(self.widget)
-        self.label_3.setObjectName(u"label_3")
-        self.label_3.setMinimumSize(QSize(0, 33))
-        self.label_3.setMaximumSize(QSize(16777215, 33))
+        self.widget_2 = QWidget(self.widget)
+        self.widget_2.setObjectName(u"widget_2")
+        self.horizontalLayout = QHBoxLayout(self.widget_2)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.yes_warning = QPushButton(self.widget_2)
+        self.yes_warning.setObjectName(u"yes_warning")
+        self.yes_warning.setMinimumSize(QSize(50, 0))
+        self.yes_warning.setMaximumSize(QSize(50, 16777215))
 
-        self.gridLayout_2.addWidget(self.label_3, 2, 0, 1, 1)
+        self.horizontalLayout.addWidget(self.yes_warning)
+
+        self.no_warning = QPushButton(self.widget_2)
+        self.no_warning.setObjectName(u"no_warning")
+        self.no_warning.setMinimumSize(QSize(50, 0))
+        self.no_warning.setMaximumSize(QSize(50, 16777215))
+
+        self.horizontalLayout.addWidget(self.no_warning)
+
+
+        self.gridLayout_2.addWidget(self.widget_2, 2, 1, 1, 1, Qt.AlignHCenter)
 
 
         self.gridLayout.addWidget(self.widget, 0, 0, 1, 1)
 
-        self.line = QFrame(FIR_window)
-        self.line.setObjectName(u"line")
-        self.line.setFrameShape(QFrame.VLine)
-        self.line.setFrameShadow(QFrame.Sunken)
 
-        self.gridLayout.addWidget(self.line, 0, 1, 1, 1)
+        self.retranslateUi(Dialog_rt_filter)
 
-        self.line_2 = QFrame(FIR_window)
-        self.line_2.setObjectName(u"line_2")
-        self.line_2.setFrameShape(QFrame.HLine)
-        self.line_2.setFrameShadow(QFrame.Sunken)
-
-        self.gridLayout.addWidget(self.line_2, 1, 0, 1, 3)
-
-
-        self.retranslateUi(FIR_window)
-
-        QMetaObject.connectSlotsByName(FIR_window)
+        QMetaObject.connectSlotsByName(Dialog_rt_filter)
     # setupUi
 
-    def retranslateUi(self, FIR_window):
-        FIR_window.setWindowTitle(QCoreApplication.translate("FIR_window", u"FIR configs", None))
-        self.fs_combo.setText(QCoreApplication.translate("FIR_window", u"1000", None))
-        self.numtaps_line.setText(QCoreApplication.translate("FIR_window", u"10", None))
-        self.type_line.setItemText(0, QCoreApplication.translate("FIR_window", u"HALF-BAND", None))
-        self.type_line.setItemText(1, QCoreApplication.translate("FIR_window", u"HIGHPASS", None))
-        self.type_line.setItemText(2, QCoreApplication.translate("FIR_window", u"BANDPASS", None))
-        self.type_line.setItemText(3, QCoreApplication.translate("FIR_window", u"LOWPASS", None))
-
-        self.save_fir_button.setText(QCoreApplication.translate("FIR_window", u"SAVE", None))
-        self.label.setText(QCoreApplication.translate("FIR_window", u"Enter filter numtaps:", None))
-        self.label_2.setText(QCoreApplication.translate("FIR_window", u"Fs:", None))
-        self.label_3.setText(QCoreApplication.translate("FIR_window", u"Type:", None))
+    def retranslateUi(self, Dialog_rt_filter):
+        Dialog_rt_filter.setWindowTitle(QCoreApplication.translate("Dialog_rt_filter", u"Dialog", None))
+        self.label.setText(QCoreApplication.translate("Dialog_rt_filter", u"Warning \u26a0\ufe0f", None))
+        self.label_2.setText(QCoreApplication.translate("Dialog_rt_filter", u"This function requires significant computational power. Are you sure you want to proceed?", None))
+        self.yes_warning.setText(QCoreApplication.translate("Dialog_rt_filter", u"Yes", None))
+        self.no_warning.setText(QCoreApplication.translate("Dialog_rt_filter", u"No", None))
     # retranslateUi
 

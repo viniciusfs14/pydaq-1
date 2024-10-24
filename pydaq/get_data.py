@@ -42,7 +42,6 @@ class GetData(Base):
             session_duration=10.0,
             save=True,
             plot=True,
-            plot_fr = True,
     ):
         super().__init__()
         self.device = device
@@ -51,7 +50,6 @@ class GetData(Base):
         self.session_duration = session_duration
         self.save = save
         self.plot = plot
-        self.plot_fr = plot_fr
 
         # Terminal configuration
         self.terminal = self.term_map[terminal]
@@ -86,7 +84,7 @@ class GetData(Base):
         self.ard_ai_max, self.ard_ai_min = 5, 0
 
         # Value per bit - Arduino
-        self.ard_vpb = (self.ard_ai_max - self.ard_ai_min) / (2 ** self.arduino_ai_bits)
+        self.ard_vpb = (self.ard_ai_max - self.ard_ai_min) / ((2 ** self.arduino_ai_bits)-1)
 
     def get_data_nidaq(self):
         """
@@ -167,8 +165,6 @@ class GetData(Base):
             print("\nData saved ...")
 
         return
-
-        
 
     def get_data_arduino(self):
         """

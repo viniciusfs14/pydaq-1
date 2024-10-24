@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>477</width>
-    <height>491</height>
+    <width>479</width>
+    <height>527</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -192,6 +192,35 @@ QPushButton#reload_devices:pressed{
 }</string>
   </property>
   <layout class="QGridLayout" name="gridLayout_2">
+   <item row="1" column="0">
+    <widget class="Line" name="line_2">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0" alignment="Qt::AlignHCenter">
+    <widget class="QPushButton" name="start_get_data">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string> GET DATA </string>
+     </property>
+    </widget>
+   </item>
    <item row="0" column="0">
     <widget class="QWidget" name="widget" native="true">
      <layout class="QGridLayout" name="gridLayout">
@@ -280,7 +309,7 @@ QPushButton#reload_devices:pressed{
          </size>
         </property>
         <property name="text">
-         <string>Choose device:</string>
+         <string>Device:</string>
         </property>
        </widget>
       </item>
@@ -404,7 +433,7 @@ QPushButton#reload_devices:pressed{
          </size>
         </property>
         <property name="text">
-         <string>Choose channel:</string>
+         <string>Channel:</string>
         </property>
        </widget>
       </item>
@@ -520,7 +549,7 @@ QPushButton#reload_devices:pressed{
          </size>
         </property>
         <property name="text">
-         <string>Path</string>
+         <string>Path:</string>
         </property>
        </widget>
       </item>
@@ -654,15 +683,8 @@ QPushButton#reload_devices:pressed{
      </layout>
     </widget>
    </item>
-   <item row="1" column="0">
-    <widget class="Line" name="line_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="2" column="0" alignment="Qt::AlignHCenter">
-    <widget class="QPushButton" name="start_get_data">
+   <item row="3" column="0" alignment="Qt::AlignHCenter">
+    <widget class="QPushButton" name="teste">
      <property name="minimumSize">
       <size>
        <width>0</width>
@@ -675,11 +697,8 @@ QPushButton#reload_devices:pressed{
        <height>30</height>
       </size>
      </property>
-     <property name="styleSheet">
-      <string notr="true"/>
-     </property>
      <property name="text">
-      <string> GET DATA </string>
+      <string>TESTE</string>
      </property>
     </widget>
    </item>
@@ -690,8 +709,8 @@ QPushButton#reload_devices:pressed{
  </resources>
  <connections/>
  <buttongroups>
+  <buttongroup name="filter_radio_group"/>
   <buttongroup name="save_radio_group"/>
   <buttongroup name="plot_radio_group"/>
-  <buttongroup name="filter_radio_group"/>
  </buttongroups>
 </ui>

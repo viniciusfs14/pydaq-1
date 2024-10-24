@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>FIR_window</class>
- <widget class="QWidget" name="FIR_window">
+ <class>Dialog_rt_filter</class>
+ <widget class="QDialog" name="Dialog_rt_filter">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>431</width>
-    <height>163</height>
+    <width>685</width>
+    <height>160</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>FIR configs</string>
+   <string>Dialog</string>
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget{
@@ -256,144 +256,68 @@ QPushButton#reload_devices:pressed{
 </string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="2">
-    <widget class="QWidget" name="widget_2" native="true">
-     <layout class="QGridLayout" name="gridLayout_3">
-      <item row="1" column="0">
-       <widget class="QLineEdit" name="fs_combo">
-        <property name="text">
-         <string>1000</string>
-        </property>
-       </widget>
-      </item>
-      <item row="0" column="0">
-       <widget class="QLineEdit" name="numtaps_line">
-        <property name="text">
-         <string>10</string>
-        </property>
-       </widget>
-      </item>
-      <item row="2" column="0">
-       <widget class="QComboBox" name="type_line">
-        <item>
-         <property name="text">
-          <string>HALF-BAND</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>HIGHPASS</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>BANDPASS</string>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>LOWPASS</string>
-         </property>
-        </item>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-   <item row="2" column="0" colspan="3" alignment="Qt::AlignHCenter">
-    <widget class="QPushButton" name="save_fir_button">
-     <property name="maximumSize">
-      <size>
-       <width>100</width>
-       <height>100</height>
-      </size>
-     </property>
-     <property name="text">
-      <string>SAVE</string>
-     </property>
-    </widget>
-   </item>
    <item row="0" column="0">
     <widget class="QWidget" name="widget" native="true">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>33</height>
-      </size>
-     </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
+      <item row="0" column="1" alignment="Qt::AlignHCenter">
        <widget class="QLabel" name="label">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>22</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>22</height>
-         </size>
-        </property>
         <property name="text">
-         <string>Enter filter numtaps:</string>
+         <string>Warning ⚠️</string>
         </property>
        </widget>
       </item>
-      <item row="1" column="0">
+      <item row="1" column="1">
        <widget class="QLabel" name="label_2">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>22</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>22</height>
-         </size>
-        </property>
         <property name="text">
-         <string>Fs:</string>
+         <string>This function requires significant computational power. Are you sure you want to proceed?</string>
         </property>
        </widget>
       </item>
-      <item row="2" column="0">
-       <widget class="QLabel" name="label_3">
-        <property name="minimumSize">
-         <size>
-          <width>0</width>
-          <height>33</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>16777215</width>
-          <height>33</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Type:</string>
-        </property>
+      <item row="2" column="1" alignment="Qt::AlignHCenter">
+       <widget class="QWidget" name="widget_2" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QPushButton" name="yes_warning">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>Yes</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="no_warning">
+           <property name="minimumSize">
+            <size>
+             <width>50</width>
+             <height>0</height>
+            </size>
+           </property>
+           <property name="maximumSize">
+            <size>
+             <width>50</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>No</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
        </widget>
       </item>
      </layout>
-    </widget>
-   </item>
-   <item row="0" column="1">
-    <widget class="Line" name="line">
-     <property name="orientation">
-      <enum>Qt::Vertical</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="1" column="0" colspan="3">
-    <widget class="Line" name="line_2">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
     </widget>
    </item>
   </layout>
